@@ -1,0 +1,16 @@
+{
+    "name": "spojenet/raiffeisenbank-statement-downloader",
+    "description": "raiffeisenbank bank statement downloader for Stormware Pohoda",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vítězslav Dvořák",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "bin": ["src/raiffeisenbank-statement-downloader.php"],
+    "require": {
+        "vitexsoftware/rbczpremiumapi": "dev-main"
+    }
+}

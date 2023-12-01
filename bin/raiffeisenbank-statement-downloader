@@ -1,0 +1,4 @@
+#!/bin/bash
+php -f /usr/lib/raiffeisenbank-statement-downloader/raiffeisenbank-statement-downloader.php $@
+
+
