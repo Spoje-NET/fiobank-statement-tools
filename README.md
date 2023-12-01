@@ -10,6 +10,8 @@ Usage
 raiffeisenbank-statement-downloader [save/to/directory] [format] [path/to/.env]
 ```
 
+Example output when EASE_LOGGER=console
+
 ```
 12/01/2023 16:37:10 ⚙ ❲RaiffeisenBank Statement Downloader⦒123456789@VitexSoftware\Raiffeisenbank\Statementor❳ Request statements from 2023-11-30 to 2023-11-30
 12/01/2023 16:37:13 🌼 ❲RaiffeisenBank Statement Downloader⦒123@VitexSoftware\Raiffeisenbank\Statementor❳ 10_2023_123_3780381_CZK_2023-11-01.xml saved
@@ -35,7 +37,7 @@ Please set this environment variables or specify path to .env file
 
 * `API_DEBUG`=True
 * `APP_DEBUG`=True
-* `EASE_LOGGER`=syslog|console
+* `EASE_LOGGER`=syslog|eventlog|console
 
 Availble Import Scope Values
 ----------------------------
