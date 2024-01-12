@@ -25,6 +25,9 @@ if (array_key_exists(1, $argv) && $argv[1] == '-h') {
 Shared::init(['CERT_FILE', 'CERT_PASS', 'XIBMCLIENTID', 'ACCOUNT_NUMBER'], array_key_exists(3, $argv) ? $argv[3] : '../.env');
 ApiClient::checkCertificatePresence(Shared::cfg('CERT_FILE'));
 $engine = new Statementor(Shared::cfg('ACCOUNT_NUMBER'));
+if (\Ease\Shared::cfg('APP_DEBUG', false)) {
+    $engine->logBanner();
+}
 $engine->setScope(Shared::cfg('STATEMENT_IMPORT_SCOPE', 'last_month'));
 $statements = $engine->getStatements(Shared::cfg('ACCOUNT_CURRENCY', 'CZK'), Shared::cfg('STATEMENT_LINE', 'MAIN'));
 if (empty($statements) === false) {

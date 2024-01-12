@@ -3,3 +3,13 @@
 /vendor/
 /nbproject/
 /raiffeisenbank-statement-downloader.phar
+/.vscode/
+/debian/.debhelper/
+/debian/raiffeisenbank-statement-downloader/
+/debian/debhelper-build-stamp
+/debian/raiffeisenbank-statement-downloader.substvars
+/debian/multiflexi-raiffeisenbank-statement-downloader.debhelper.log
+/debian/multiflexi-raiffeisenbank-statement-downloader.substvars
+/debian/raiffeisenbank-statement-downloader.debhelper.log
+/debian/files
+/debian/multiflexi-raiffeisenbank-statement-downloader/

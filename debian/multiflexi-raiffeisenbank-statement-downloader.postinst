@@ -1,0 +1,10 @@
+#!/bin/sh
+# postinst script for multiflexi-raiffeisenbank-statement-downloader
+set -e
+
+. /usr/share/debconf/confmodule
+
+for file in `ls /usr/lib/raiffeisenbank-statement-downloader/multiflexi/*.json`
+do
+	multiflexi-json2app $file
+done

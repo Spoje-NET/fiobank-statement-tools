@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+# You must remove unused comment lines for the released package.
+#export DH_VERBOSE = 1
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/raiffeisenbank-statement-downloader/g'   debian/raiffeisenbank-statement-downloader/usr/lib/raiffeisenbank-statement-downloader/*.php
+	sed -i -e 's/\.\.\/.env//g'  debian/raiffeisenbank-statement-downloader/usr/lib/raiffeisenbank-statement-downloader/*.php
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/conf/composer.json |sponge debian/raiffeisenbank-statement-downloader/usr/lib/raiffeisenbank-statement-downloader/composer.json
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/rb_transaction_report.multiflexi.app.json |sponge debian/multiflexi-raiffeisenbank-statement-downloader/usr/lib/raiffeisenbank-statement-downloader/multiflexi/rb_transaction_report.multiflexi.app.json

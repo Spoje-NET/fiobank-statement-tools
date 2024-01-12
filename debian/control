@@ -1,0 +1,22 @@
+Source: raiffeisenbank-statement-downloader
+Section: unknown
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.5.0
+Homepage: https://github.com/VitexSoftware/raiffeisenbank-statement-downloader
+
+Package: raiffeisenbank-statement-downloader
+Architecture: all
+Depends: ${misc:Depends}, php-vitexsoftware-rbczpremiumapi
+Suggests: multiflexi
+Description: Download your Raiffeisen Bank Statements
+ Download statements to disk in requested format and within given time
+
+Package: multiflexi-raiffeisenbank-statement-downloader
+Architecture: all
+Depends: raiffeisenbank-statement-downloader, multiflexi
+Description: Raiffeisen Bank statement downloader to MultiFlexi
+ Allow use of Raiffeisen Bank statement downloader in MultiFlexi environment
+
+
