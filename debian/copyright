@@ -1,5 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: raiffeisenbank-statement-downloader
+Upstream-Name: fiobank-statement-downloader
 Upstream-Contact: <preferred name and address to reach the upstream project>
 Source: <url://example.com>
 #
@@ -11,7 +11,7 @@ Files:     .env
            .vscode/settings.json
            Makefile
            README.md
-           bin/raiffeisenbank-statement-downloader
+           bin/fiobank-statement-downloader
            composer.json
            composer.lock
            nbproject/configs/Report.properties
@@ -261,7 +261,7 @@ License:   __UNKNOWN__
 
 #----------------------------------------------------------------------------
 # xml and html files (skipped):
-#         raiffeisenbank-statement-downloader.svg
+#         fiobank-statement-downloader.svg
 #         vendor/autoload.php
 #         vendor/symfony/deprecation-contracts/function.php
 #         vendor/psr/http-client/src/ClientInterface.php
@@ -526,8 +526,8 @@ License:   __UNKNOWN__
 #         vendor/composer/autoload_psr4.php
 #         vendor/composer/autoload_files.php
 #         vendor/composer/include_paths.php
-#         src/raiffeisenbank-statement-downloader.php
-#         src/raiffeisenbank-transaction-report.php
+#         src/fiobank-statement-downloader.php
+#         src/fiobank-transaction-report.php
 #         nbproject/project.xml
 
 #----------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 {
-    "name": "spojenet/raiffeisenbank-statement-downloader",
-    "description": "raiffeisenbank bank statement downloader for Stormware Pohoda",
+    "name": "spojenet/fiobank-statement-downloader",
+    "description": "FioBank bank statement downloader for Stormware Pohoda",
     "license": "MIT",
     "authors": [
         {
@@ -8,9 +8,15 @@
             "email": "info@vitexsoftware.cz"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "SpojeNet\\FioApi\\": "src/SpojeNet/FioApi/"
+        }
+    },
     "minimum-stability": "dev",
-    "bin": ["src/raiffeisenbank-statement-downloader.php"],
+    "bin": ["src/fiobank-statement-downloader.php"],
     "require": {
-        "vitexsoftware/rbczpremiumapi": "dev-main"
+        "mhujer/fio-api-php": "dev-master",
+        "vitexsoftware/ease-core": "dev-main"
     }
 }

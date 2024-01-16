@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d79a7574fb26b6b1b3a060d7f6c54301",
+    "content-hash": "ae6703ffb1d975bf71b61738721b5bd8",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -334,6 +334,64 @@
             "time": "2023-12-03T20:05:35+00:00"
         },
         {
+            "name": "mhujer/fio-api-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mhujer/fio-api-php.git",
+                "reference": "63b971866448a2a8da1cf05d223003eab4ca196e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mhujer/fio-api-php/zipball/63b971866448a2a8da1cf05d223003eab4ca196e",
+                "reference": "63b971866448a2a8da1cf05d223003eab4ca196e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "guzzlehttp/guzzle": "~6.1|~7.0",
+                "php": "~7.4||~8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.5.10",
+                "squizlabs/php_codesniffer": "3.6.1"
+            },
+            "suggest": {
+                "composer/ca-bundle": "Provides regularly updated root certificates list"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FioApi\\": "src/FioApi"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Hujer",
+                    "email": "mhujer@gmail.com",
+                    "homepage": "https://www.martinhujer.cz/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fio API PHP implemention",
+            "homepage": "https://github.com/mhujer/fio-api-php",
+            "keywords": [
+                "Banking",
+                "api",
+                "fio"
+            ],
+            "support": {
+                "issues": "https://github.com/mhujer/fio-api-php/issues",
+                "source": "https://github.com/mhujer/fio-api-php/tree/master"
+            },
+            "time": "2021-12-07T08:56:10+00:00"
+        },
+        {
             "name": "pear/console_getopt",
             "version": "v1.4.3",
             "source": {
@@ -390,12 +448,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Mail.git",
-                "reference": "4fda3292ac6bf226d8841cfd8ee3cf4e28395c01"
+                "reference": "eb053f8b74f4f3178105fcf001626e63068c0dbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Mail/zipball/4fda3292ac6bf226d8841cfd8ee3cf4e28395c01",
-                "reference": "4fda3292ac6bf226d8841cfd8ee3cf4e28395c01",
+                "url": "https://api.github.com/repos/pear/Mail/zipball/eb053f8b74f4f3178105fcf001626e63068c0dbc",
+                "reference": "eb053f8b74f4f3178105fcf001626e63068c0dbc",
                 "shasum": ""
             },
             "require": {
@@ -450,7 +508,7 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Mail",
                 "source": "https://github.com/pear/Mail"
             },
-            "time": "2023-11-01T21:31:59+00:00"
+            "time": "2024-01-15T21:56:23+00:00"
         },
         {
             "name": "pear/mail_mime",
@@ -949,80 +1007,18 @@
                 }
             ],
             "time": "2024-01-01T11:49:38+00:00"
-        },
-        {
-            "name": "vitexsoftware/rbczpremiumapi",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/VitexSoftware/php-vitexsoftware-rbczpremiumapi.git",
-                "reference": "12c88858edf455b529e0f7ebb76f36a0f77678b2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/VitexSoftware/php-vitexsoftware-rbczpremiumapi/zipball/12c88858edf455b529e0f7ebb76f36a0f77678b2",
-                "reference": "12c88858edf455b529e0f7ebb76f36a0f77678b2",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "guzzlehttp/guzzle": "^7.3",
-                "guzzlehttp/psr7": "^1.7 || ^2.0",
-                "php": "^7.4 || ^8.0",
-                "vitexsoftware/ease-core": ">=1.41"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.5",
-                "phpunit/phpunit": "^8.0 || ^9.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "VitexSoftware\\Raiffeisenbank\\": "lib/",
-                    "VitexSoftware\\Raiffeisenbank\\Model\\": "lib/Model",
-                    "VitexSoftware\\Raiffeisenbank\\PremiumAPI\\": "lib/PremiumAPI"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vítězslav Dvořák",
-                    "homepage": "https://vitexsoftware.com"
-                }
-            ],
-            "description": "php client library for rbczpremiumapi",
-            "homepage": "https://github.com/VitexSoftware/php-vitexsoftware-raiffeisenbank",
-            "keywords": [
-                "api",
-                "openapi",
-                "openapi-generator",
-                "openapitools",
-                "php",
-                "rest",
-                "sdk"
-            ],
-            "support": {
-                "issues": "https://github.com/VitexSoftware/php-vitexsoftware-rbczpremiumapi/issues",
-                "source": "https://github.com/VitexSoftware/php-vitexsoftware-rbczpremiumapi/tree/main"
-            },
-            "time": "2024-01-12T17:10:01+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "vitexsoftware/rbczpremiumapi": 20
+        "mhujer/fio-api-php": 20,
+        "vitexsoftware/ease-core": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
