@@ -3,6 +3,7 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
+	rm -f /usr/lib/fiobank-statement-downloader/composer.lock
     ;;
 
     failed-upgrade)

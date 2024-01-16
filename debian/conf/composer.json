@@ -2,7 +2,7 @@
   "name": "spojenet/fiobank-statement-downloader",
   "description": "fiobank  account statement downloader for AbraFlexi",
   "license": "MIT",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "authors": [
     {
       "name": "Vítězslav Dvořák",
@@ -11,7 +11,7 @@
   ],
   "require": {
     "deb/ease-core": "*",
-    "mhujer/fio-api-php": "dev-master"
+    "deb/fioapi": "*"
   },
   "autoload": {
     "psr-4": {
