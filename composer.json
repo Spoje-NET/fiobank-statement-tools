@@ -1,6 +1,6 @@
 {
     "name": "spojenet/fiobank-statement-downloader",
-    "description": "FioBank bank statement downloader for Stormware Pohoda",
+    "description": "FioBank bank statement downloader",
     "license": "MIT",
     "authors": [
         {

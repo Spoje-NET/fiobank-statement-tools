@@ -1,22 +1,20 @@
-Raiffeisenbank Statement Downloader
+Fiobank Statement Downloader
 ===================================
 
-![raiffeisenbank-statement-downloader](raiffeisenbank-statement-downloader.svg?raw=true)
+![fiobank-statement-downloader](fiobank-statement-downloader.svg?raw=true)
 
 Usage
 -----
 
 ```shell
-raiffeisenbank-statement-downloader [save/to/directory] [format] [path/to/.env]
+fiobank-statement-downloader [save/to/directory] [format] [path/to/.env]
 ```
 
 Example output when EASE_LOGGER=console
 
 ```
-12/01/2023 16:37:10 ⚙ ❲RaiffeisenBank Statement Downloader⦒123456789@VitexSoftware\Raiffeisenbank\Statementor❳ Request statements from 2023-11-30 to 2023-11-30
-12/01/2023 16:37:13 🌼 ❲RaiffeisenBank Statement Downloader⦒123@VitexSoftware\Raiffeisenbank\Statementor❳ 10_2023_123_3780381_CZK_2023-11-01.xml saved
-12/01/2023 16:37:13 ℹ ❲RaiffeisenBank Statement Downloader⦒123456789@VitexSoftware\Raiffeisenbank\Statementor❳ Download done. 1 of 1 saved
-
+01/16/2024 16:46:11 ⚙ ❲FioBank Statement Downloader⦒SpojeNet\FioApi\Downloader❳ FioBank Statement Downloader EaseCore dev-main (PHP 8.3.1)
+01/16/2024 16:46:12 🌼 ❲FioBank Statement Downloader⦒SpojeNet\FioApi\Downloader❳ Výpis z účtu FIO - 12/01/23 to 12/31/23: hlavni_fio-2023_12.pdf saved
 ```
 
 Configuration
@@ -24,18 +22,11 @@ Configuration
 
 Please set this environment variables or specify path to .env file
 
-* `CERT_FILE`='RAIFF_CERT.p12'
-* `CERT_PASS`=CertPass
-* `XIBMCLIENTID`=PwX4XXXXXXXXXXv6I
+* `FIO_TOKEN`='KitMuWyajissajPishtuwolth8ojyukMaldryavAcsOotuhuaksaf'
+* `FIO_TOKEN_NAME`='Fio Main'
 * `ACCOUNT_NUMBER`=666666666
-* `ACCOUNT_CURRENCY`=CZK
-* `STATEMENT_FORMAT`=pdf | xml | MT940
-* `STATEMENT_LINE`=MAIN
-* `STATEMENT_IMPORT_SCOPE`=last_two_months
-* `STATEMENTS_DIR`=~/Documents/
 
 
-* `API_DEBUG`=True
 * `APP_DEBUG`=True
 * `EASE_LOGGER`=syslog|eventlog|console
 

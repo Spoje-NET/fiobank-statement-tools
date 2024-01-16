@@ -1,7 +1,7 @@
 <?php
 
 /**
- * fiobank - Statements downloader.
+ * FioBank - Statements downloader.
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.com>
  * @copyright  (C) 2024 Spoje.Net
@@ -37,22 +37,23 @@ $subject = sprintf(
     \strftime('%x', $period->getEndDate()->getTimestamp())
 );
 
+$destDir = array_key_exists(1, $argv) ? $argv[1] : getcwd() . '/';
+$format = array_key_exists(2, $argv) ? $argv[2] : 'pdf';
+
 $client = $downloader->getClient();
 
-$url = \FioApi\UrlBuilder::BASE_URL . 'by-id/' . \Ease\Shared::cfg('FIO_TOKEN') . '/' . $start->format('Y') . '/' . $start->format('n') . '/transactions.pdf';
+$url = \FioApi\UrlBuilder::BASE_URL . 'by-id/' . \Ease\Shared::cfg('FIO_TOKEN') . '/' . $start->format('Y') . '/' . $start->format('n') . '/transactions.' . $format;
 try {
-    $pdfFilename = sys_get_temp_dir() . '/' . strtolower(\Ease\Shared::cfg('FIO_TOKEN_NAME')) . '-' . $start->format('Y') . '_' . $start->format('n') . '.pdf';
+    $filename = $destDir . strtolower(\Ease\Shared::cfg('FIO_TOKEN_NAME')) . '-' . $start->format('Y') . '_' . $start->format('n') . '.' . $format;
     /** @var ResponseInterface $response */
     $response = $client->request(
         'get',
         $url,
         ['verify' => $downloader->getCertificatePath()]
     );
-    $result = true;
-    if (file_put_contents($pdfFilename, $response->getBody()) !== false) {
-    } else {
-    }
-    unlink($pdfFilename);
+    $saved = file_put_contents($filename, $response->getBody());
+    $downloader->addStatusMessage($subject . ': ' . $filename . ' ' . _('saved'), $saved ? 'success' : 'error');
+    exit($saved ? 0 : 1);
 } catch (\GuzzleHttp\Exception\BadResponseException $e) {
     switch ($e->getCode()) {
         case 409:
