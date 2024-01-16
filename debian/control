@@ -8,7 +8,7 @@ Homepage: https://github.com/VitexSoftware/fiobank-statement-downloader
 
 Package: fiobank-statement-downloader
 Architecture: all
-Depends: ${misc:Depends}, php-mhujer-fio-api
+Depends: ${misc:Depends}, php-mhujer-fio-api, php-vitexsoftware-ease-core
 Suggests: multiflexi
 Description: Download your Raiffeisen Bank Statements
  Download statements to disk in requested format and within given time
