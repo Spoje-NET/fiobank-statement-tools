@@ -82,9 +82,8 @@ class Downloader extends \FioApi\Downloader
                 break;
             default:
                 throw new \Exception('Unknown scope ' . $scope);
-                break;
         }
-        if ($scope != 'auto' && $scope != 'today' && $scope != 'yesterday') {
+        if (($scope != 'auto') && ($scope != 'today') && ($scope != 'yesterday')) {
             $this->since = $this->since->setTime(0, 0);
             $this->until = $this->until->setTime(0, 0);
         }
