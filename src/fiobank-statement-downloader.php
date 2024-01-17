@@ -45,7 +45,7 @@ $client = $downloader->getClient();
 $url = \FioApi\UrlBuilder::BASE_URL . 'by-id/' . \Ease\Shared::cfg('FIO_TOKEN') . '/' . $start->format('Y') . '/' . $start->format('n') . '/transactions.' . $format;
 try {
     $filename = $destDir . strtolower(\Ease\Shared::cfg('FIO_TOKEN_NAME')) . '-' . $start->format('Y') . '_' . $start->format('n') . '.' . $format;
-    /** @var ResponseInterface $response */
+    /** @var \GuzzleHttp\Psr7\ResponseInterface $response */
     $response = $client->request(
         'get',
         $url,
