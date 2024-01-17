@@ -31,8 +31,8 @@
         },
         "STATEMETNTS_DIR": {
             "type": "string",
-            "description": "Number of Account",
-            "defval": "",
+            "description": "Directory to download",
+            "defval": ".",
             "required": true
         },
         "STATEMETNTS_FORMAT": {
