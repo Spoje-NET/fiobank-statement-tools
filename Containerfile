@@ -10,4 +10,4 @@ WORKDIR /usr/src/subreg2abraflexi
 RUN curl -s https://getcomposer.org/installer | php
 RUN ./composer.phar install
 WORKDIR /usr/src/subreg2abraflexi/src
-CMD [ "php", "./subreg2abraflexi.php" ]
+CMD [ "php", "./fiobank-statement-downloader.php" ]

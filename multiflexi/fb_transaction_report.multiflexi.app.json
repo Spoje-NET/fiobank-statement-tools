@@ -6,7 +6,7 @@
     "setup": "",
     "cmdparams": "",
     "deploy": "apt install fiobank-statement-downloader",
-    "homepage": "",
+    "homepage": "https://github.com/Spoje-NET/fiobank-statement-downloader",
     "requirements": null,
     "ociimage": "",
     "version": "0.2.0",
