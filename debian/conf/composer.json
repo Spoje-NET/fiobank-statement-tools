@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "SpojeNet\\FioApi\\": "/usr/share/fiobank-statement-downloader/SpojeNet/FioApi"
+      "SpojeNet\\FioApi\\": "/usr/lib/fiobank-statement-downloader/SpojeNet/FioApi/"
     }
   },
   "repositories": [
