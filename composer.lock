@@ -516,12 +516,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Mail_Mime.git",
-                "reference": "895f9bea89417e963f321d2f27189d2ccd40592d"
+                "reference": "fb8f9c4b9f817e402b5cea55af2a92d17f82ee15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Mail_Mime/zipball/895f9bea89417e963f321d2f27189d2ccd40592d",
-                "reference": "895f9bea89417e963f321d2f27189d2ccd40592d",
+                "url": "https://api.github.com/repos/pear/Mail_Mime/zipball/fb8f9c4b9f817e402b5cea55af2a92d17f82ee15",
+                "reference": "fb8f9c4b9f817e402b5cea55af2a92d17f82ee15",
                 "shasum": ""
             },
             "require": {
@@ -560,7 +560,7 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Mail_Mime",
                 "source": "https://github.com/pear/Mail_Mime"
             },
-            "time": "2023-12-10T12:44:33+00:00"
+            "time": "2024-01-19T13:24:42+00:00"
         },
         {
             "name": "pear/pear-core-minimal",
@@ -952,12 +952,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/VitexSoftware/php-ease-core.git",
-                "reference": "7866ad434d7f986f2d6d6b2bac4799bbf27419e8"
+                "reference": "6d510ee0e56c8c39b022ef2113136d69a7d5be60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VitexSoftware/php-ease-core/zipball/7866ad434d7f986f2d6d6b2bac4799bbf27419e8",
-                "reference": "7866ad434d7f986f2d6d6b2bac4799bbf27419e8",
+                "url": "https://api.github.com/repos/VitexSoftware/php-ease-core/zipball/6d510ee0e56c8c39b022ef2113136d69a7d5be60",
+                "reference": "6d510ee0e56c8c39b022ef2113136d69a7d5be60",
                 "shasum": ""
             },
             "require": {
@@ -1006,7 +1006,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-01-01T11:49:38+00:00"
+            "time": "2024-01-18T14:27:02+00:00"
         }
     ],
     "packages-dev": [],
@@ -1020,5 +1020,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

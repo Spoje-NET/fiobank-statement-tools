@@ -53,4 +53,10 @@ Availble Import Scope Values
 * 'November',
 * 'December'
 
+fiobank-transaction-report
+--------------------------
+
+export fio transactions overview as json
+
+
 Created using the library [fio-api-php](https://github.com/mhujer/fio-api-php)
