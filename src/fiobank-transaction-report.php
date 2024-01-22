@@ -15,7 +15,7 @@ require_once('../vendor/autoload.php');
 
 define('APP_NAME', 'FioBank Statement Reporter');
 
-Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], array_key_exists(3, $argv) ? $argv[3] : '../.env');
+Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], array_key_exists(1, $argv) ? $argv[1] : '../.env');
 $downloader = new \SpojeNet\FioApi\Downloader(\Ease\Shared::cfg('FIO_TOKEN'));
 
 if (\Ease\Shared::cfg('APP_DEBUG', false)) {
