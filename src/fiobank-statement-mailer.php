@@ -37,8 +37,7 @@ $subject = sprintf(
     \strftime('%x', $period->getEndDate()->getTimestamp())
 );
 
-$format = array_key_exists(2, $argv) ? $argv[2] : 'pdf';
-
+$format = array_key_exists(2, $argv) ? $argv[2] : \Ease\Functions::cfg('STATEMENTS_FORMAT', 'pdf');
 $client = $downloader->getClient();
 
 $url = \FioApi\UrlBuilder::BASE_URL . 'by-id/' . \Ease\Shared::cfg('FIO_TOKEN') . '/' . $start->format('Y') . '/' . $start->format('n') . '/transactions.' . $format;
@@ -56,7 +55,7 @@ try {
 
     if ($saved) {
         $downloaded = [$filename];
-        $recipient = array_key_exists(1, $argv) ? $argv[1] : Shared::cfg('STATEMENTS_TO');
+        $recipient = Shared::cfg('STATEMENTS_TO', array_key_exists(1, $argv) ? $argv[1] : '');
         if (empty($recipient)) {
             fwrite(fopen('php://stderr', 'wb'), \Ease\Shared::appName() . ': ' . _('No recipient provided! Check arguments or environment') . PHP_EOL);
             exit(1);
