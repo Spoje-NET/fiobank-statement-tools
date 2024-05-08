@@ -1,8 +1,12 @@
-fiobank-statement-downloader (0.2.0) UNRELEASED; urgency=medium
+fiobank-statement-downloader (0.2.1) UNRELEASED; urgency=medium
 
+  [ vitezslav.dvorak@spojenet.cz ]
   * Statement Mailer tool added
 
- --  <vitezslav.dvorak@spojenet.cz>  Wed, 08 May 2024 17:25:58 +0200
+  [  ]
+  * MultiFlexi definitions update
+
+ --  <vitezslav.dvorak@spojenet.cz>  Wed, 08 May 2024 18:01:03 +0200
 
 fiobank-statement-downloader (0.1.0) unstable; urgency=low
 

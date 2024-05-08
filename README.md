@@ -60,10 +60,10 @@ fiobank-transaction-mailer
 
 Share configuration with downloader and use few own keys:
 
-`STATEMENTS_FROM`
-`STATEMENTS_REPLYTO`
-`STATEMENTS_CC`
-`EASE_SMTP` - optional json string `{"port": "587", "starttls": true, "auth": true, "host": "smtp.office365.com", "username": "@spojenet.cz", "password": "pw"}`
+* `STATEMENTS_FROM`
+* `STATEMENTS_REPLYTO`
+* `STATEMENTS_CC`
+* `EASE_SMTP` - optional json string `{"port": "587", "starttls": true, "auth": true, "host": "smtp.office365.com", "username": "@spojenet.cz", "password": "pw"}`
 
 
 fiobank-transaction-report
