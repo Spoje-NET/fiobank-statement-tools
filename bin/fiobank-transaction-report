@@ -1,4 +1,4 @@
 #!/bin/bash
-php -f /usr/lib/fiobank-statement-downloader/fiobank-transaction-report.php $@
+php -f /usr/lib/fiobank-statement-downloader/fiobank-transaction-report.php -- $@
 
 

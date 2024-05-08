@@ -1,5 +1,12 @@
-fiobank-statement-downloader (0.1.0) UNRELEASED; urgency=low
+fiobank-statement-downloader (0.2.0) UNRELEASED; urgency=medium
 
+  * Statement Mailer tool added
+
+ --  <vitezslav.dvorak@spojenet.cz>  Wed, 08 May 2024 17:25:58 +0200
+
+fiobank-statement-downloader (0.1.0) unstable; urgency=low
+
+  [ Vítězslav Dvořák ]
   * Initial release.
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Fri, 12 Jan 2024 18:41:11 +0100
+ --  <vitezslav.dvorak@spojenet.cz>  Wed, 08 May 2024 17:25:37 +0200

@@ -1,0 +1,4 @@
+#!/bin/bash
+php -f /usr/lib/fiobank-statement-downloader/fiobank-statement-mailer.php - $@
+
+

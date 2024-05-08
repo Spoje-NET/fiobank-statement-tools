@@ -53,10 +53,34 @@ Availble Import Scope Values
 * 'November',
 * 'December'
 
+fiobank-transaction-mailer
+--------------------------
+
+![Mailer](fiobank-statement-mailer.svg?raw=true)
+
+Share configuration with downloader and use few own keys:
+
+`STATEMENTS_FROM`
+`STATEMENTS_REPLYTO`
+`STATEMENTS_CC`
+`EASE_SMTP` - optional json string `{"port": "587", "starttls": true, "auth": true, "host": "smtp.office365.com", "username": "@spojenet.cz", "password": "pw"}`
+
+
 fiobank-transaction-report
 --------------------------
+
+![Report](fiobank-transaction-report.svg?raw=true)
+
 
 export fio transactions overview as json
 
 
 Created using the library [fio-api-php](https://github.com/mhujer/fio-api-php)
+
+MultiFlexi
+----------
+
+FioBank statement downloader is ready for run as [MultiFlexi](https://multiflexi.eu) application.
+See the full list of ready-to-run applications within the MultiFlexi platform on the [application list page](https://www.multiflexi.eu/apps.php).
+
+[![MultiFlexi App](https://github.com/VitexSoftware/MultiFlexi/blob/main/doc/multiflexi-app.svg)](https://www.multiflexi.eu/apps.php)

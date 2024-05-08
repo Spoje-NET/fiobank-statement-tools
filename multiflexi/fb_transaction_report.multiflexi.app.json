@@ -6,14 +6,14 @@
     "setup": "",
     "cmdparams": "",
     "deploy": "apt install fiobank-statement-downloader",
-    "homepage": "https://github.com/Spoje-NET/fiobank-statement-downloader",
-    "requirements": null,
+    "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
+    "requirements": "FioBank",
     "ociimage": "",
-    "version": "0.2.0",
+    "topics": "FioBank, Transaction, Report",
     "environment": {
         "FIO_TOKEN": {
             "type": "password",
-            "description": "Token with account read permissin",
+            "description": "Token with account read permission",
             "defval": "",
             "required": true
         },
