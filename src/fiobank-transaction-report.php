@@ -1,7 +1,7 @@
 <?php
 
 /**
- * fiobank - Statements downloader.
+ * FioBank - Statements downloader.
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.com>
  * @copyright  (C) 2024 Spoje.Net
@@ -18,9 +18,9 @@ define('APP_NAME', 'FioBank Statement Reporter');
 Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], array_key_exists(1, $argv) ? $argv[1] : '../.env');
 \Ease\Locale::singleton(null, '../i18n', 'fio-statement-tools');
 
-$downloader = new \SpojeNet\FioApi\Downloader(\Ease\Shared::cfg('FIO_TOKEN'));
+$downloader = new \SpojeNet\FioApi\Downloader(Shared::cfg('FIO_TOKEN'));
 
-if (\Ease\Shared::cfg('APP_DEBUG', false)) {
+if (Shared::cfg('APP_DEBUG', false)) {
     $downloader->logBanner();
 }
 $downloader->setScope('last_month');
@@ -89,7 +89,6 @@ if (empty($transactionList) === false) {
             case 'Inkaso':
             case 'Inkaso ve prospěch účtu':
             case 'Inkaso z účtu':
-            case 'Evidovaný úrok':
             case 'Poplatek - pojištění hypoték':
             default:
                 $downloader->addStatusMessage(_('Unhandled Operation') . ': ' . $type, 'warning');

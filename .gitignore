@@ -19,3 +19,6 @@
 /debian/fiobank-statement-downloader.debhelper.log
 /debian/fiobank-statement-downloader.substvars
 /debian/multiflexi-fiobank-statement-downloader.substvars
+/fiobank-statement-downloader.png
+/fiobank-statement-mailer.png
+/fiobank-transaction-report.png

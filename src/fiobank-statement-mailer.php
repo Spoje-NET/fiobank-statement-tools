@@ -22,7 +22,7 @@ if (array_key_exists(1, $argv) && $argv[1] == '-h') {
 Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], array_key_exists(3, $argv) ? $argv[3] : '../.env');
 $downloader = new \SpojeNet\FioApi\Downloader(\Ease\Shared::cfg('FIO_TOKEN'));
 
-if (\Ease\Shared::cfg('APP_DEBUG', false)) {
+if (Shared::cfg('APP_DEBUG', false)) {
     $downloader->logBanner();
 }
 
@@ -34,9 +34,9 @@ $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
 
 $subject = sprintf(
     _('FIO Statement %s - %s to %s'),
-    \Ease\Functions::cfg('ACCOUNT_NUMBER'),
-    \strftime('%x', $period->getStartDate()->getTimestamp()),
-    \strftime('%x', $period->getEndDate()->getTimestamp())
+    Shared::cfg('ACCOUNT_NUMBER'),
+    $period->getStartDate()->format('m/d/Y'),
+    $period->getEndDate()->format('m/d/Y')
 );
 
 $format = array_key_exists(2, $argv) ? $argv[2] : \Ease\Functions::cfg('STATEMENTS_FORMAT', 'pdf');
@@ -50,7 +50,7 @@ try {
     $response = $client->request(
         'get',
         $url,
-        ['verify' => $downloader->getCertificatePath()]
+        ['verify' => \Composer\CaBundle\CaBundle::getSystemCaRootBundlePath()]
     );
     $saved = file_put_contents($filename, $response->getBody());
     $downloader->addStatusMessage($subject . ': ' . $filename . ' ' . _('saved'), $saved ? 'success' : 'error');

@@ -7,6 +7,83 @@
     "content-hash": "ae6703ffb1d975bf71b61738721b5bd8",
     "packages": [
         {
+            "name": "composer/ca-bundle",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "0c5ccfcfea312b5c5a190a21ac5cef93f74baf99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/0c5ccfcfea312b5c5a190a21ac5cef93f74baf99",
+                "reference": "0c5ccfcfea312b5c5a190a21ac5cef93f74baf99",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "psr/log": "^1.0",
+                "symfony/phpunit-bridge": "^4.2 || ^5",
+                "symfony/process": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/ca-bundle/issues",
+                "source": "https://github.com/composer/ca-bundle/tree/1.5.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-03-15T14:00:32+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "7.9.x-dev",
             "source": {
@@ -339,25 +416,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mhujer/fio-api-php.git",
-                "reference": "63b971866448a2a8da1cf05d223003eab4ca196e"
+                "reference": "cd0e6e94bdda213d1d8390e3287b566764ee3d48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mhujer/fio-api-php/zipball/63b971866448a2a8da1cf05d223003eab4ca196e",
-                "reference": "63b971866448a2a8da1cf05d223003eab4ca196e",
+                "url": "https://api.github.com/repos/mhujer/fio-api-php/zipball/cd0e6e94bdda213d1d8390e3287b566764ee3d48",
+                "reference": "cd0e6e94bdda213d1d8390e3287b566764ee3d48",
                 "shasum": ""
             },
             "require": {
+                "composer/ca-bundle": "^1.5",
                 "ext-curl": "*",
+                "ext-json": "*",
                 "guzzlehttp/guzzle": "~6.1|~7.0",
                 "php": "~7.4||~8.0"
             },
             "require-dev": {
+                "phpstan/phpstan": "1.11.5",
+                "phpstan/phpstan-phpunit": "1.4.0",
+                "phpstan/phpstan-strict-rules": "1.6.0",
                 "phpunit/phpunit": "9.5.10",
                 "squizlabs/php_codesniffer": "3.6.1"
-            },
-            "suggest": {
-                "composer/ca-bundle": "Provides regularly updated root certificates list"
             },
             "default-branch": true,
             "type": "library",
@@ -389,7 +468,7 @@
                 "issues": "https://github.com/mhujer/fio-api-php/issues",
                 "source": "https://github.com/mhujer/fio-api-php/tree/master"
             },
-            "time": "2021-12-07T08:56:10+00:00"
+            "time": "2024-06-17T18:18:06+00:00"
         },
         {
             "name": "pear/console_getopt",
@@ -448,12 +527,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Mail.git",
-                "reference": "eb053f8b74f4f3178105fcf001626e63068c0dbc"
+                "reference": "40028d27f67dd5b845a8b74ed6d678677d40bd5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Mail/zipball/eb053f8b74f4f3178105fcf001626e63068c0dbc",
-                "reference": "eb053f8b74f4f3178105fcf001626e63068c0dbc",
+                "url": "https://api.github.com/repos/pear/Mail/zipball/40028d27f67dd5b845a8b74ed6d678677d40bd5f",
+                "reference": "40028d27f67dd5b845a8b74ed6d678677d40bd5f",
                 "shasum": ""
             },
             "require": {
@@ -508,7 +587,7 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Mail",
                 "source": "https://github.com/pear/Mail"
             },
-            "time": "2024-01-15T21:56:23+00:00"
+            "time": "2024-06-10T05:29:41+00:00"
         },
         {
             "name": "pear/mail_mime",
@@ -726,7 +805,7 @@
         },
         {
             "name": "psr/http-factory",
-            "version": "dev-master",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-factory.git",
@@ -742,7 +821,6 @@
                 "php": ">=7.1",
                 "psr/http-message": "^1.0 || ^2.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -952,12 +1030,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/VitexSoftware/php-ease-core.git",
-                "reference": "5e466a1b2e1a189165b54da44b39cae235a01925"
+                "reference": "31718e35488e83d3686d6f438b3cfad819d6b482"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VitexSoftware/php-ease-core/zipball/5e466a1b2e1a189165b54da44b39cae235a01925",
-                "reference": "5e466a1b2e1a189165b54da44b39cae235a01925",
+                "url": "https://api.github.com/repos/VitexSoftware/php-ease-core/zipball/31718e35488e83d3686d6f438b3cfad819d6b482",
+                "reference": "31718e35488e83d3686d6f438b3cfad819d6b482",
                 "shasum": ""
             },
             "require": {
@@ -1006,7 +1084,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-03-30T01:47:59+00:00"
+            "time": "2024-05-29T15:51:33+00:00"
         }
     ],
     "packages-dev": [],

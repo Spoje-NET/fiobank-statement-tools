@@ -7,6 +7,9 @@
    viewBox="0 0 100 100"
    height="100mm"
    width="100mm"
+   inkscape:export-filename="fiobank-statement-downloader.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -15,7 +18,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:ns0="&amp;#38;#38;#38;#38;#38;#38;ns_ai;">
+   xmlns:ns0="&amp;#38;#38;#38;#38;#38;#38;#38;ns_ai;">
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -641,14 +644,14 @@
      inkscape:window-maximized="1"
      inkscape:window-y="0"
      inkscape:window-x="1920"
-     inkscape:window-height="1130"
+     inkscape:window-height="1125"
      inkscape:window-width="1920"
      showgrid="false"
      inkscape:document-rotation="0"
      inkscape:current-layer="g2598"
      inkscape:document-units="mm"
-     inkscape:cy="244.96199"
-     inkscape:cx="154.04826"
+     inkscape:cy="244.45691"
+     inkscape:cx="87.883271"
      inkscape:zoom="0.9899495"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
