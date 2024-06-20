@@ -19,6 +19,8 @@ if (array_key_exists(1, $argv) && $argv[1] == '-h') {
 }
 
 Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], array_key_exists(3, $argv) ? $argv[3] : '../.env');
+\Ease\Locale::singleton(null, '../i18n', 'fio-statement-tools');
+
 $downloader = new \SpojeNet\FioApi\Downloader(\Ease\Shared::cfg('FIO_TOKEN'));
 
 if (\Ease\Shared::cfg('APP_DEBUG', false)) {
@@ -32,9 +34,10 @@ $end->modify('last day of last month');
 $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
 
 $subject = sprintf(
-    _('Výpis z účtu FIO Spoje.Net - %s to %s'),
-    \strftime('%x', $period->getStartDate()->getTimestamp()),
-    \strftime('%x', $period->getEndDate()->getTimestamp())
+    _('FIO Statement %s - %s to %s'),
+    \Ease\Functions::cfg('ACCOUNT_NUMBER'),
+    $period->getStartDate()->format('d/m/Y'),
+    $period->getEndDate()->format('d/m/Y')
 );
 
 $destDir = array_key_exists(1, $argv) ? $argv[1] : getcwd() . '/';

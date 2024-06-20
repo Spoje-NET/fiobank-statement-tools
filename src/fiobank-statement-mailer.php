@@ -12,6 +12,7 @@ use Ease\Shared;
 require_once('../vendor/autoload.php');
 
 define('APP_NAME', 'FioBank Statement Downloader');
+\Ease\Locale::singleton(null, '../i18n', 'fio-statement-tools');
 
 if (array_key_exists(1, $argv) && $argv[1] == '-h') {
     echo 'fiobank-statement-mailer [recipient1@server.cz,recipient2@server.com] [format] [path/to/.env]';
@@ -32,7 +33,8 @@ $end->modify('last day of last month');
 $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
 
 $subject = sprintf(
-    _('Výpis z účtu FIO - %s to %s'),
+    _('FIO Statement %s - %s to %s'),
+    \Ease\Functions::cfg('ACCOUNT_NUMBER'),
     \strftime('%x', $period->getStartDate()->getTimestamp()),
     \strftime('%x', $period->getEndDate()->getTimestamp())
 );

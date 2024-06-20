@@ -16,6 +16,8 @@ require_once('../vendor/autoload.php');
 define('APP_NAME', 'FioBank Statement Reporter');
 
 Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], array_key_exists(1, $argv) ? $argv[1] : '../.env');
+\Ease\Locale::singleton(null, '../i18n', 'fio-statement-tools');
+
 $downloader = new \SpojeNet\FioApi\Downloader(\Ease\Shared::cfg('FIO_TOKEN'));
 
 if (\Ease\Shared::cfg('APP_DEBUG', false)) {
@@ -94,7 +96,6 @@ if (empty($transactionList) === false) {
                 $direction = null;
                 break;
         }
-
 
         if (is_bool($direction)) {
             $payments[$direction ? 'in' : 'out'][$transaction->getId()] = $transaction->getAmount();

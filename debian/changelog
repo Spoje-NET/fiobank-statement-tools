@@ -1,4 +1,10 @@
-fiobank-statement-downloader (0.2.1) UNRELEASED; urgency=medium
+fiobank-statement-downloader (0.3.0) UNRELEASED; urgency=medium
+
+  * Localization added
+
+ --  <vitezslav.dvorak@spojenet.cz>  Thu, 20 Jun 2024 13:50:03 +0200
+
+fiobank-statement-downloader (0.2.1) unstable; urgency=medium
 
   [ vitezslav.dvorak@spojenet.cz ]
   * Statement Mailer tool added
@@ -6,7 +12,7 @@ fiobank-statement-downloader (0.2.1) UNRELEASED; urgency=medium
   [  ]
   * MultiFlexi definitions update
 
- --  <vitezslav.dvorak@spojenet.cz>  Wed, 08 May 2024 18:01:03 +0200
+ --  <vitezslav.dvorak@spojenet.cz>  Thu, 20 Jun 2024 13:49:58 +0200
 
 fiobank-statement-downloader (0.1.0) unstable; urgency=low
 

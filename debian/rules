@@ -8,10 +8,15 @@
 %:
 	dh $@
 
+override_dh_clean:
+	rm -rf vendor
+	dh_clean
+
 override_dh_install:
 	dh_install
 	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/fiobank-statement-downloader/g'   debian/fiobank-statement-downloader/usr/lib/fiobank-statement-downloader/*.php
 	sed -i -e 's/\.\.\/.env//g'  debian/fiobank-statement-downloader/usr/lib/fiobank-statement-downloader/*.php
+	sed -i -e 's/\.\.\/i18n/\/usr\/share\/locale/g'            	     debian/fiobank-statement-downloader/usr/lib/fiobank-statement-downloader/*.php
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/conf/composer.json |sponge debian/fiobank-statement-downloader/usr/lib/fiobank-statement-downloader/composer.json
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/fb_transaction_report.multiflexi.app.json |sponge debian/multiflexi-fiobank-statement-downloader/usr/lib/fiobank-statement-downloader/multiflexi/fb_transaction_report.multiflexi.app.json
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/fb_statement_downloader.multiflexi.app.json |sponge debian/multiflexi-fiobank-statement-downloader/usr/lib/fiobank-statement-downloader/multiflexi/fb_statement_downloader.multiflexi.app.json

@@ -5,530 +5,66 @@ Source: <url://example.com>
 #
 # Please double check copyright with the licensecheck(1) command.
 
-Files:     .env
-           .env.example.dist
-           .gitignore
-           .vscode/settings.json
-           Makefile
-           README.md
-           bin/fiobank-statement-downloader
-           composer.json
-           composer.lock
-           nbproject/configs/Report.properties
-           nbproject/private/config.properties
-           nbproject/private/configs/Report.properties
-           nbproject/private/private.properties
-           nbproject/project.properties
-           vendor/composer/installed.json
-           vendor/guzzlehttp/guzzle/CHANGELOG.md
-           vendor/guzzlehttp/guzzle/README.md
-           vendor/guzzlehttp/guzzle/UPGRADING.md
-           vendor/guzzlehttp/guzzle/composer.json
-           vendor/guzzlehttp/promises/CHANGELOG.md
-           vendor/guzzlehttp/promises/README.md
-           vendor/guzzlehttp/promises/composer.json
-           vendor/guzzlehttp/psr7/CHANGELOG.md
-           vendor/guzzlehttp/psr7/README.md
-           vendor/guzzlehttp/psr7/composer.json
-           vendor/pear/console_getopt/.gitignore
-           vendor/pear/console_getopt/.travis.yml
-           vendor/pear/console_getopt/README.rst
-           vendor/pear/console_getopt/composer.json
-           vendor/pear/console_getopt/tests/001-getopt.phpt
-           vendor/pear/console_getopt/tests/bug10557.phpt
-           vendor/pear/console_getopt/tests/bug11068.phpt
-           vendor/pear/console_getopt/tests/bug13140.phpt
-           vendor/pear/mail/README.rst
-           vendor/pear/mail/composer.json
-           vendor/pear/mail_mime/README
-           vendor/pear/mail_mime/composer.json
-           vendor/pear/pear-core-minimal/README.rst
-           vendor/pear/pear-core-minimal/composer.json
-           vendor/pear/pear_exception/composer.json
-           vendor/psr/http-client/CHANGELOG.md
-           vendor/psr/http-client/README.md
-           vendor/psr/http-client/composer.json
-           vendor/psr/http-factory/README.md
-           vendor/psr/http-factory/composer.json
-           vendor/psr/http-message/CHANGELOG.md
-           vendor/psr/http-message/README.md
-           vendor/psr/http-message/composer.json
-           vendor/psr/http-message/docs/PSR7-Interfaces.md
-           vendor/psr/http-message/docs/PSR7-Usage.md
-           vendor/ralouphie/getallheaders/README.md
-           vendor/ralouphie/getallheaders/composer.json
-           vendor/symfony/deprecation-contracts/CHANGELOG.md
-           vendor/symfony/deprecation-contracts/README.md
-           vendor/symfony/deprecation-contracts/composer.json
-           vendor/vitexsoftware/ease-core/.github/FUNDING.yml
-           vendor/vitexsoftware/ease-core/.github/dependabot.yml
-           vendor/vitexsoftware/ease-core/.github/workflows/packaging.yml
-           vendor/vitexsoftware/ease-core/.github/workflows/testing.yml
-           vendor/vitexsoftware/ease-core/.vscode/settings.json
-           vendor/vitexsoftware/ease-core/Examples/SendTestMail.php
-           vendor/vitexsoftware/ease-core/Examples/debian/composer.json
-           vendor/vitexsoftware/ease-core/Examples/debian/debianized.php
-           vendor/vitexsoftware/ease-core/Makefile
-           vendor/vitexsoftware/ease-core/README.md
-           vendor/vitexsoftware/ease-core/Vagrantfile
-           vendor/vitexsoftware/ease-core/bootstrap-centos.sh
-           vendor/vitexsoftware/ease-core/codeception.yml
-           vendor/vitexsoftware/ease-core/composer.json
-           vendor/vitexsoftware/ease-core/debian/Jenkinsfile
-           vendor/vitexsoftware/ease-core/debian/README.Debian
-           vendor/vitexsoftware/ease-core/debian/compat
-           vendor/vitexsoftware/ease-core/debian/composer.json
-           vendor/vitexsoftware/ease-core/debian/ease-mailer-test
-           vendor/vitexsoftware/ease-core/debian/fixversion.sh
-           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-dev.install
-           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-dev.links
-           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-dev.postinst
-           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-doc.conf
-           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core-doc.install
-           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core.install
-           vendor/vitexsoftware/ease-core/debian/php-vitexsoftware-ease-core.postinst
-           vendor/vitexsoftware/ease-core/debian/rules
-           vendor/vitexsoftware/ease-core/debian/source/format
-           vendor/vitexsoftware/ease-core/debian/tests/composer.json
-           vendor/vitexsoftware/ease-core/ease-core-social-preview.png
-           vendor/vitexsoftware/ease-core/ease-core.dsc
-           vendor/vitexsoftware/ease-core/i18n/cs_CZ/LC_MESSAGES/php-vitexsoftware-ease-core.mo
-           vendor/vitexsoftware/ease-core/i18n/cs_CZ/LC_MESSAGES/php-vitexsoftware-ease-core.po
-           vendor/vitexsoftware/ease-core/i18n/en_US/LC_MESSAGES/php-vitexsoftware-ease-core.mo
-           vendor/vitexsoftware/ease-core/i18n/en_US/LC_MESSAGES/php-vitexsoftware-ease-core.po
-           vendor/vitexsoftware/ease-core/i18n/eo/LC_MESSAGES/php-vitexsoftware-ease-core.mo
-           vendor/vitexsoftware/ease-core/i18n/eo/LC_MESSAGES/php-vitexsoftware-ease-core.po
-           vendor/vitexsoftware/ease-core/project-logo.png
-           vendor/vitexsoftware/ease-core/project-logo.xcf
-           vendor/vitexsoftware/ease-core/release.sh
-           vendor/vitexsoftware/ease-core/social-preview.xcf
-           vendor/vitexsoftware/ease-core/tests/.env
-           vendor/vitexsoftware/ease-core/tests/configtest.json
-           vendor/vitexsoftware/ease-core/tests/report.sh
-           vendor/vitexsoftware/ease-core/tests/runalltests.sh
-           vendor/vitexsoftware/ease-core/tests/unit.suite.yml
-           vendor/vitexsoftware/rbczpremiumapi/.gitignore
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator-ignore
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/FILES
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/VERSION
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/config.yaml
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/.travis.yml
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/AUTHORS.md
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/README.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/api_doc.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/composer.json
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/composer.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/git_push.sh.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/gitignore
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/model_doc.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/model_enum.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/model_generic.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/partial_header.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/php_doc_auth_partial.mustache
-           vendor/vitexsoftware/rbczpremiumapi/.travis.yml
-           vendor/vitexsoftware/rbczpremiumapi/01rbczpremiumapi.yaml
-           vendor/vitexsoftware/rbczpremiumapi/AUTHORS.md
-           vendor/vitexsoftware/rbczpremiumapi/README.md
-           vendor/vitexsoftware/rbczpremiumapi/composer.json
-           vendor/vitexsoftware/rbczpremiumapi/debian/Jenkinsfile
-           vendor/vitexsoftware/rbczpremiumapi/debian/README.Debian
-           vendor/vitexsoftware/rbczpremiumapi/debian/compat
-           vendor/vitexsoftware/rbczpremiumapi/debian/composer.json
-           vendor/vitexsoftware/rbczpremiumapi/debian/debhelper-build-stamp
-           vendor/vitexsoftware/rbczpremiumapi/debian/files
-           vendor/vitexsoftware/rbczpremiumapi/debian/php-vitexsoftware-rbczpremiumapi-dev.install
-           vendor/vitexsoftware/rbczpremiumapi/debian/php-vitexsoftware-rbczpremiumapi-dev.postinst
-           vendor/vitexsoftware/rbczpremiumapi/debian/php-vitexsoftware-rbczpremiumapi-doc.conf
-           vendor/vitexsoftware/rbczpremiumapi/debian/php-vitexsoftware-rbczpremiumapi-doc.install
-           vendor/vitexsoftware/rbczpremiumapi/debian/php-vitexsoftware-rbczpremiumapi.install
-           vendor/vitexsoftware/rbczpremiumapi/debian/php-vitexsoftware-rbczpremiumapi.postinst
-           vendor/vitexsoftware/rbczpremiumapi/debian/rules
-           vendor/vitexsoftware/rbczpremiumapi/debian/source/format
-           vendor/vitexsoftware/rbczpremiumapi/debian/test/composer.json
-           vendor/vitexsoftware/rbczpremiumapi/debian/test/test.env
-           vendor/vitexsoftware/rbczpremiumapi/docs/Api/DownloadStatementApi.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Api/GetAccountBalanceApi.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Api/GetAccountsApi.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Api/GetBatchDetailApi.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Api/GetStatementListApi.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Api/GetTransactionListApi.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Api/UploadPaymentsApi.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/DownloadStatementRequest.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/GetBalance200Response.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/GetBalance200ResponseCurrencyFoldersInner.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/GetBalance200ResponseCurrencyFoldersInnerBalancesInner.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/GetBalance401Response.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/GetBalance403Response.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/GetBalance404Response.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/GetBalance429Response.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/GetStatementsRequest.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/ImportPayments400Response.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/ImportPayments413Response.md
-           vendor/vitexsoftware/rbczpremiumapi/docs/Model/ImportPayments415Response.md
-           vendor/vitexsoftware/rbczpremiumapi/examples/example.env
-           vendor/vitexsoftware/rbczpremiumapi/examples/test_cert.p12
-           vendor/vitexsoftware/rbczpremiumapi/examples/test_cert_ssl3.p12
-           vendor/vitexsoftware/rbczpremiumapi/git_push.sh
-           vendor/vitexsoftware/rbczpremiumapi/openapi-rbcz.yml
-           vendor/vitexsoftware/rbczpremiumapi/openapitools.json
-           vendor/vitexsoftware/rbczpremiumapi/package-lock.json
-           vendor/vitexsoftware/rbczpremiumapi/package.json
-           vendor/vitexsoftware/rbczpremiumapi/regenerate.sh
-           vendor/vitexsoftware/rbczpremiumapi/social-logo.png
-Copyright: __NO_COPYRIGHT_NOR_LICENSE__
-License:   __NO_COPYRIGHT_NOR_LICENSE__
+Files:      .env
+            .env.example.dist
+            .gitignore
+            .vscode/settings.json
+            Makefile
+            README.md
+            bin/fiobank-statement-downloader
+            composer.json
+            composer.lock
+            nbproject/configs/Report.properties
+            nbproject/private/config.properties
+            nbproject/private/configs/Report.properties
+            nbproject/private/private.properties
+            nbproject/project.properties
+            .env.example
+            Containerfile
+            bin/fiobank-statement-mailer
+            bin/fiobank-transaction-report
+            debian/Jenkinsfile
+            debian/README.Debian
+            debian/changelog
+            debian/clean
+            debian/conf/composer.json
+            debian/control
+            debian/copyright
+            debian/fiobank-statement-downloader.install
+            debian/fiobank-statement-downloader.postinst
+            debian/links
+            debian/multiflexi-fiobank-statement-downloader.install
+            debian/multiflexi-fiobank-statement-downloader.postinst
+            debian/multiflexi-fiobank-statement-downloader.prerm
+            debian/postrm
+            debian/preinst
+            debian/prerm
+            debian/rules
+            debian/source/control
+            debian/source/format
+            debian/tests/control
+            debian/upstream/metadata
+            debian/watch
+            fiobank-statement-downloader.svg
+            fiobank-statement-mailer.svg
+            fiobank-transaction-report.svg
+            i18n/cs_CZ/LC_MESSAGES/fio-statement-tools.mo
+            i18n/cs_CZ/LC_MESSAGES/fio-statement-tools.po
+            i18n/en_US/LC_MESSAGES/fio-statement-tools.mo
+            i18n/en_US/LC_MESSAGES/fio-statement-tools.po
+            io.github.spoje_net.fiobank_statement_downloader.metainfo.xml
+            multiflexi/fb_statement_downloader.multiflexi.app.json
+            multiflexi/fb_statement_mailer.multiflexi.app.json
+            multiflexi/fb_transaction_report.multiflexi.app.json
+            nbproject/private/private.xml
+            nbproject/project.xml
+            src/SpojeNet/FioApi/Downloader.php
+            src/fiobank-statement-downloader.php
+            src/fiobank-statement-mailer.php
+            src/fiobank-transaction-report.php
+            tests/bootstrap.php
+            tests/configuration.xml
 
-Files:     vendor/vitexsoftware/ease-core/debian/copyright
-           vendor/vitexsoftware/rbczpremiumapi/debian/copyright
-Copyright: 2013-2020 Vítězslav Dvořák (v.s.cz) License: MIT
-License:   __UNKNOWN__
- License: MIT
- On Debian systems the full text of the GNU General Public License can be found
- in the `/usr/share/common-licenses/MIT' file.
-
-Files:     vendor/vitexsoftware/ease-core/Dockerfile
-Copyright: __NO_COPYRIGHT__ in: vendor/vitexsoftware/ease-core/Dockerfile
-License:   __UNKNOWN__
- COPY src/ /usr/share/php/Ease
- COPY debian/composer.json /usr/share/php/Ease/composer.json
- COPY docs/  /usr/share/doc/ease-core/html
-
-Files:     vendor/vitexsoftware/ease-core/ease-core.spec
-Copyright: 2018 Vítězslav Dvořák <info@vitexsoftware.cz>
-License:   __UNKNOWN__
- Please preserve changelog entries
-
-Files:     vendor/vitexsoftware/rbczpremiumapi/debian/control
-Copyright: __NO_COPYRIGHT__ in: vendor/vitexsoftware/rbczpremiumapi/debian/control
-License:   __UNKNOWN__
- Package: php-vitexsoftware-rbczpremiumapi
- Depends: ${misc:Depends}, php-guzzlehttp-psr7, composer-debian, php-vitexsoftware-ease-core
- Architecture: all
- Suggests: abraflexi-raiffasenbank
- Section: office
- Priority: optional
- Description: php client library for rbczpremiumapi
- See Accont Balance, Download statements etc.
- .
- Package: php-vitexsoftware-rbczpremiumapi-dev
- Depends: ${misc:Depends}, php-vitexsoftware-rbczpremiumapi, phpunit, php-vitexsoftware-ease-core-dev
- Architecture: all
- Section: devel
- Priority: optional
- Description: php client library for rbczpremiumapi Unit Tests
- Only for developers
- .
- Package: php-vitexsoftware-rbczpremiumapi-doc
- Depends: ${misc:Depends}
- Architecture: all
- Suggests: www-browser
- Section: doc
- Priority: optional
- Description: php client library for rbczpremiumapi  Documentation
- php client library for rbczpremiumapi documentation generated by phpDocumentor
-
-Files:     vendor/vitexsoftware/ease-core/debian/control
-Copyright: __NO_COPYRIGHT__ in: vendor/vitexsoftware/ease-core/debian/control
-License:   __UNKNOWN__
- Package: php-vitexsoftware-ease-core
- Depends: ${misc:Depends}, php-mail, php-mail-mime, composer-debian, php-intl
- Conflicts: ease-framework
- Architecture: all
- Suggests: php-vitexsoftware-ease-html, php-vitexsoftware-ease-bootstrap, php-vitexsoftware-ease-bootstrap4
- Section: web
- Priority: optional
- Description: EasePHP Framework Core
- common classes for Ease Framework.
- .
- Package: php-vitexsoftware-ease-core-dev
- Pre-Depends: default-mta | postfix | exim4 | ssmtp | mail-transport-agent
- Depends: ${misc:Depends}, php-mail, php-mail-mime, php-vitexsoftware-ease-core, phpunit,
- Architecture: all
- Suggests: php-vitexsoftware-ease-html, php-vitexsoftware-ease-bootstrap, php-vitexsoftware-ease-bootstrap4
- Section: web
- Priority: optional
- Description: EasePHP Framework Unit Tests
- Ease Framework Core unit Test classes.
- .
- Package: php-vitexsoftware-ease-core-doc
- Depends: ${misc:Depends}
- Architecture: all
- Suggests: www-browser
- Section: doc
- Priority: optional
- Description: EasePHP Framework Documentation
- Ease Framework core documentation generate phpDocumentor
-
-#----------------------------------------------------------------------------
-# xml and html files (skipped):
-#         fiobank-statement-downloader.svg
-#         vendor/autoload.php
-#         vendor/symfony/deprecation-contracts/function.php
-#         vendor/psr/http-client/src/ClientInterface.php
-#         vendor/psr/http-client/src/ClientExceptionInterface.php
-#         vendor/psr/http-client/src/NetworkExceptionInterface.php
-#         vendor/psr/http-client/src/RequestExceptionInterface.php
-#         vendor/psr/http-factory/src/UriFactoryInterface.php
-#         vendor/psr/http-factory/src/RequestFactoryInterface.php
-#         vendor/psr/http-factory/src/UploadedFileFactoryInterface.php
-#         vendor/psr/http-factory/src/ServerRequestFactoryInterface.php
-#         vendor/psr/http-factory/src/ResponseFactoryInterface.php
-#         vendor/psr/http-factory/src/StreamFactoryInterface.php
-#         vendor/psr/http-message/src/RequestInterface.php
-#         vendor/psr/http-message/src/StreamInterface.php
-#         vendor/psr/http-message/src/UriInterface.php
-#         vendor/psr/http-message/src/UploadedFileInterface.php
-#         vendor/psr/http-message/src/MessageInterface.php
-#         vendor/psr/http-message/src/ResponseInterface.php
-#         vendor/psr/http-message/src/ServerRequestInterface.php
-#         vendor/vitexsoftware/rbczpremiumapi/phpunit.xml.dist
-#         vendor/vitexsoftware/rbczpremiumapi/library-logo.svg
-#         vendor/vitexsoftware/rbczpremiumapi/.php-cs-fixer.dist.php
-#         vendor/vitexsoftware/rbczpremiumapi/examples/gettransactions.php
-#         vendor/vitexsoftware/rbczpremiumapi/examples/getstatements.php
-#         vendor/vitexsoftware/rbczpremiumapi/examples/getstatement.php
-#         vendor/vitexsoftware/rbczpremiumapi/examples/getaccounts.php
-#         vendor/vitexsoftware/rbczpremiumapi/examples/download-statements.php
-#         vendor/vitexsoftware/rbczpremiumapi/debian/test/bootstrap.php
-#         vendor/vitexsoftware/rbczpremiumapi/debian/test/phpunit.xml
-#         vendor/vitexsoftware/rbczpremiumapi/test/bootstrap.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/DownloadStatementRequestTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/GetBalance404ResponseTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/GetBalance200ResponseCurrencyFoldersInnerTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/GetBalance403ResponseTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/GetBalance401ResponseTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/ImportPayments415ResponseTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/ImportPayments413ResponseTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/GetStatementsRequestTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/GetBalance200ResponseTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/GetBalance429ResponseTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/ImportPayments400ResponseTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Model/GetBalance200ResponseCurrencyFoldersInnerBalancesInnerTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Api/GetAccountBalanceApiTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Api/GetTransactionListApiTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Api/UploadPaymentsApiTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Api/GetBatchDetailApiTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Api/GetStatementListApiTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Api/DownloadStatementApiTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/test/Api/GetAccountsApiTest.php
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/ApiClient.php
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/HeaderSelector.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/api.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/Configuration.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/ObjectSerializer.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/ModelInterface.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/bootstrap.php
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/ApiException.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/api_test.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/.php-cs-fixer.dist.php
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/phpunit.xml.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/model.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/.openapi-generator/templates/model_test.mustache
-#         vendor/vitexsoftware/rbczpremiumapi/lib/ApiClient.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Configuration.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/ObjectSerializer.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Statementor.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/ApiException.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/HeaderSelector.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/PremiumAPI/UploadPaymentsApi.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/PremiumAPI/DownloadStatementApi.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/PremiumAPI/GetBatchDetailApi.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/PremiumAPI/GetAccountBalanceApi.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/PremiumAPI/GetAccountsApi.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/PremiumAPI/GetStatementListApi.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/PremiumAPI/GetTransactionListApi.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/DownloadStatementRequest.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/ImportPayments413Response.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/GetBalance404Response.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/ImportPayments400Response.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/GetBalance429Response.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/GetBalance401Response.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/ModelInterface.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/ImportPayments415Response.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/GetBalance200ResponseCurrencyFoldersInner.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/GetBalance403Response.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/GetBalance200ResponseCurrencyFoldersInnerBalancesInner.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/GetStatementsRequest.php
-#         vendor/vitexsoftware/rbczpremiumapi/lib/Model/GetBalance200Response.php
-#         vendor/vitexsoftware/ease-core/php-vitexsoftware-ease-core-dev.svg
-#         vendor/vitexsoftware/ease-core/php-vitexsoftware-ease-core-doc.svg
-#         vendor/vitexsoftware/ease-core/project-logo.svg
-#         vendor/vitexsoftware/ease-core/src/Ease/Atom.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Person.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Brick.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Shared.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Exception.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Locale.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Mailer.php
-#         vendor/vitexsoftware/ease-core/src/Ease/User.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Anonym.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Functions.php
-#         vendor/vitexsoftware/ease-core/src/Ease/RecordKey.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Sand.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Molecule.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToConsole.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToEmail.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToFile.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/Regent.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToSyslog.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToEventlog.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/Loggingable.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/Logging.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/Message.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToMemory.php
-#         vendor/vitexsoftware/ease-core/src/Ease/Logger/ToStd.php
-#         vendor/vitexsoftware/ease-core/debian/tests/Bootstrap.php
-#         vendor/vitexsoftware/ease-core/debian/tests/phpunit.xml
-#         vendor/vitexsoftware/ease-core/Examples/Logger/logToConsole.php
-#         vendor/vitexsoftware/ease-core/Examples/Logger/logToEmail.php
-#         vendor/vitexsoftware/ease-core/tests/SandTester.php
-#         vendor/vitexsoftware/ease-core/tests/Bootstrap.php
-#         vendor/vitexsoftware/ease-core/tests/configuration.xml
-#         vendor/vitexsoftware/ease-core/tests/BrickTester.php
-#         vendor/vitexsoftware/ease-core/tests/LoggingTester.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/RecordKeyTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/FunctionsTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/ExceptionTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/MailerTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/LocaleTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/MoleculeTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/AtomTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/SharedTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/BrickTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/SandTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/UserTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/AnonymTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToSyslogTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToFileTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/RegentTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToStdTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToMemoryTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToEmailTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToEventlogTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/LoggingTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/MessageTest.php
-#         vendor/vitexsoftware/ease-core/tests/src/Ease/Logger/ToConsoleTest.php
-#         vendor/guzzlehttp/guzzle/src/ClientInterface.php
-#         vendor/guzzlehttp/guzzle/src/functions_include.php
-#         vendor/guzzlehttp/guzzle/src/BodySummarizer.php
-#         vendor/guzzlehttp/guzzle/src/RequestOptions.php
-#         vendor/guzzlehttp/guzzle/src/MessageFormatter.php
-#         vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php
-#         vendor/guzzlehttp/guzzle/src/BodySummarizerInterface.php
-#         vendor/guzzlehttp/guzzle/src/TransferStats.php
-#         vendor/guzzlehttp/guzzle/src/Pool.php
-#         vendor/guzzlehttp/guzzle/src/HandlerStack.php
-#         vendor/guzzlehttp/guzzle/src/MessageFormatterInterface.php
-#         vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php
-#         vendor/guzzlehttp/guzzle/src/functions.php
-#         vendor/guzzlehttp/guzzle/src/RetryMiddleware.php
-#         vendor/guzzlehttp/guzzle/src/Middleware.php
-#         vendor/guzzlehttp/guzzle/src/ClientTrait.php
-#         vendor/guzzlehttp/guzzle/src/Utils.php
-#         vendor/guzzlehttp/guzzle/src/Client.php
-#         vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php
-#         vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php
-#         vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php
-#         vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php
-#         vendor/guzzlehttp/guzzle/src/Handler/Proxy.php
-#         vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php
-#         vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php
-#         vendor/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php
-#         vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php
-#         vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php
-#         vendor/guzzlehttp/guzzle/src/Cookie/SetCookie.php
-#         vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php
-#         vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php
-#         vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php
-#         vendor/guzzlehttp/guzzle/src/Exception/ClientException.php
-#         vendor/guzzlehttp/guzzle/src/Exception/BadResponseException.php
-#         vendor/guzzlehttp/guzzle/src/Exception/ConnectException.php
-#         vendor/guzzlehttp/guzzle/src/Exception/TransferException.php
-#         vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php
-#         vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php
-#         vendor/guzzlehttp/guzzle/src/Exception/ServerException.php
-#         vendor/guzzlehttp/guzzle/src/Exception/InvalidArgumentException.php
-#         vendor/guzzlehttp/guzzle/src/Exception/RequestException.php
-#         vendor/guzzlehttp/psr7/src/Request.php
-#         vendor/guzzlehttp/psr7/src/MessageTrait.php
-#         vendor/guzzlehttp/psr7/src/Stream.php
-#         vendor/guzzlehttp/psr7/src/PumpStream.php
-#         vendor/guzzlehttp/psr7/src/DroppingStream.php
-#         vendor/guzzlehttp/psr7/src/LazyOpenStream.php
-#         vendor/guzzlehttp/psr7/src/UriComparator.php
-#         vendor/guzzlehttp/psr7/src/BufferStream.php
-#         vendor/guzzlehttp/psr7/src/UploadedFile.php
-#         vendor/guzzlehttp/psr7/src/LimitStream.php
-#         vendor/guzzlehttp/psr7/src/Response.php
-#         vendor/guzzlehttp/psr7/src/Query.php
-#         vendor/guzzlehttp/psr7/src/HttpFactory.php
-#         vendor/guzzlehttp/psr7/src/MimeType.php
-#         vendor/guzzlehttp/psr7/src/CachingStream.php
-#         vendor/guzzlehttp/psr7/src/UriNormalizer.php
-#         vendor/guzzlehttp/psr7/src/MultipartStream.php
-#         vendor/guzzlehttp/psr7/src/Utils.php
-#         vendor/guzzlehttp/psr7/src/InflateStream.php
-#         vendor/guzzlehttp/psr7/src/Message.php
-#         vendor/guzzlehttp/psr7/src/NoSeekStream.php
-#         vendor/guzzlehttp/psr7/src/UriResolver.php
-#         vendor/guzzlehttp/psr7/src/Header.php
-#         vendor/guzzlehttp/psr7/src/StreamDecoratorTrait.php
-#         vendor/guzzlehttp/psr7/src/AppendStream.php
-#         vendor/guzzlehttp/psr7/src/ServerRequest.php
-#         vendor/guzzlehttp/psr7/src/Uri.php
-#         vendor/guzzlehttp/psr7/src/StreamWrapper.php
-#         vendor/guzzlehttp/psr7/src/FnStream.php
-#         vendor/guzzlehttp/psr7/src/Rfc7230.php
-#         vendor/guzzlehttp/psr7/src/Exception/MalformedUriException.php
-#         vendor/guzzlehttp/promises/src/FulfilledPromise.php
-#         vendor/guzzlehttp/promises/src/Each.php
-#         vendor/guzzlehttp/promises/src/TaskQueue.php
-#         vendor/guzzlehttp/promises/src/Promise.php
-#         vendor/guzzlehttp/promises/src/Create.php
-#         vendor/guzzlehttp/promises/src/PromiseInterface.php
-#         vendor/guzzlehttp/promises/src/EachPromise.php
-#         vendor/guzzlehttp/promises/src/AggregateException.php
-#         vendor/guzzlehttp/promises/src/RejectedPromise.php
-#         vendor/guzzlehttp/promises/src/CancellationException.php
-#         vendor/guzzlehttp/promises/src/Coroutine.php
-#         vendor/guzzlehttp/promises/src/PromisorInterface.php
-#         vendor/guzzlehttp/promises/src/Utils.php
-#         vendor/guzzlehttp/promises/src/TaskQueueInterface.php
-#         vendor/guzzlehttp/promises/src/RejectionException.php
-#         vendor/guzzlehttp/promises/src/Is.php
-#         vendor/pear/mail_mime/Mail/mimePart.php
-#         vendor/pear/mail_mime/Mail/mime.php
-#         vendor/pear/pear-core-minimal/src/System.php
-#         vendor/pear/pear-core-minimal/src/PEAR.php
-#         vendor/pear/pear-core-minimal/src/PEAR/Error.php
-#         vendor/pear/pear-core-minimal/src/PEAR/ErrorStack.php
-#         vendor/pear/pear-core-minimal/src/OS/Guess.php
-#         vendor/pear/pear_exception/PEAR/Exception.php
-#         vendor/pear/mail/Mail.php
-#         vendor/pear/mail/Mail/RFC822.php
-#         vendor/pear/mail/Mail/sendmail.php
-#         vendor/pear/mail/Mail/mail.php
-#         vendor/pear/mail/Mail/mock.php
-#         vendor/pear/mail/Mail/smtp.php
-#         vendor/pear/mail/Mail/null.php
-#         vendor/pear/mail/Mail/smtpmx.php
-#         vendor/pear/console_getopt/package.xml
-#         vendor/pear/console_getopt/Console/Getopt.php
-#         vendor/ralouphie/getallheaders/src/getallheaders.php
-#         vendor/composer/ClassLoader.php
-#         vendor/composer/InstalledVersions.php
-#         vendor/composer/autoload_namespaces.php
-#         vendor/composer/platform_check.php
-#         vendor/composer/installed.php
-#         vendor/composer/autoload_classmap.php
-#         vendor/composer/autoload_real.php
-#         vendor/composer/autoload_static.php
-#         vendor/composer/autoload_psr4.php
-#         vendor/composer/autoload_files.php
-#         vendor/composer/include_paths.php
-#         src/fiobank-statement-downloader.php
-#         src/fiobank-transaction-report.php
-#         nbproject/project.xml
 
 #----------------------------------------------------------------------------
 # Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following

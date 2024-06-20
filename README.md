@@ -1,5 +1,5 @@
 Fiobank Statement Downloader
-===================================
+============================
 
 ![fiobank-statement-downloader](fiobank-statement-downloader.svg?raw=true)
 
