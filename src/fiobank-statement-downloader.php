@@ -6,6 +6,7 @@
  * @author     Vítězslav Dvořák <info@vitexsoftware.com>
  * @copyright  (C) 2024 Spoje.Net
  */
+
 use Ease\Shared;
 
 require_once('../vendor/autoload.php');
@@ -20,7 +21,7 @@ if (array_key_exists(1, $argv) && $argv[1] == '-h') {
 Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], array_key_exists(3, $argv) ? $argv[3] : '../.env');
 \Ease\Locale::singleton(null, '../i18n', 'fio-statement-tools');
 
-$downloader = new \SpojeNet\FioApi\Downloader(\Ease\Shared::cfg('FIO_TOKEN'));
+$downloader = new \SpojeNet\FioApi\Downloader(Shared::cfg('FIO_TOKEN'));
 
 if (Shared::cfg('APP_DEBUG', false)) {
     $downloader->logBanner();
@@ -33,10 +34,10 @@ $end->modify('last day of last month');
 $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
 
 $subject = sprintf(
-        _('FIO Statement %s - %s to %s'),
-        Shared::cfg('ACCOUNT_NUMBER'),
-        $period->getStartDate()->format('d/m/Y'),
-        $period->getEndDate()->format('d/m/Y')
+    _('FIO Statement %s - %s to %s'),
+    Shared::cfg('ACCOUNT_NUMBER'),
+    $period->getStartDate()->format('d/m/Y'),
+    $period->getEndDate()->format('d/m/Y')
 );
 
 $destDir = array_key_exists(1, $argv) ? $argv[1] : getcwd() . '/';
@@ -44,14 +45,13 @@ $format = array_key_exists(2, $argv) ? $argv[2] : 'pdf';
 
 $client = $downloader->getClient();
 
-$url = \FioApi\UrlBuilder::BASE_URL . 'by-id/' . \Ease\Shared::cfg('FIO_TOKEN') . '/' . $start->format('Y') . '/' . $start->format('n') . '/transactions.' . $format;
+$url = \FioApi\UrlBuilder::BASE_URL . 'by-id/' . Shared::cfg('FIO_TOKEN') . '/' . $start->format('Y') . '/' . $start->format('n') . '/transactions.' . $format;
 try {
-    $filename = $destDir . strtolower(\Ease\Shared::cfg('FIO_TOKEN_NAME')) . '-' . $start->format('Y') . '_' . $start->format('n') . '.' . $format;
-    /** @var \GuzzleHttp\Psr7\ResponseInterface $response */
+    $filename = $destDir . strtolower(Shared::cfg('FIO_TOKEN_NAME')) . '-' . $start->format('Y') . '_' . $start->format('n') . '.' . $format;
     $response = $client->request(
-            'get',
-            $url,
-            ['verify' => Composer\CaBundle\CaBundle::getSystemCaRootBundlePath()]
+        'get',
+        $url,
+        ['verify' => Composer\CaBundle\CaBundle::getSystemCaRootBundlePath()]
     );
     $saved = file_put_contents($filename, $response->getBody());
     $downloader->addStatusMessage($subject . ': ' . $filename . ' ' . _('saved'), $saved ? 'success' : 'error');

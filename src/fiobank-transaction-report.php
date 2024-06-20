@@ -102,7 +102,7 @@ if (empty($transactionList) === false) {
             $payments[$direction ? 'in_total' : 'out_total'] += 1;
         }
     }
-    echo json_encode($payments, \Ease\Shared::cfg('DEBUG') ? JSON_PRETTY_PRINT : 0);
+    echo json_encode($payments, Shared::cfg('DEBUG') ? JSON_PRETTY_PRINT : 0);
 } else {
     echo "no statements returned\n";
 }
