@@ -9,7 +9,7 @@
     "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
     "requirements": "FioBank",
     "ociimage": "",
-    "topics": "FioBank, Transaction, Report",
+    "topics": "FioBank,Transaction,Json,Report",
     "environment": {
         "FIO_TOKEN": {
             "type": "password",
@@ -28,7 +28,19 @@
             "description": "Number of Account",
             "defval": "",
             "required": true
+        },
+         "TRANSACTION_SCOPE": {
+            "type": "text",
+            "description": "Time scope of transactions downloaded",
+            "defval": "last_month",
+            "required": false
+        },
+        "RESULT_FILE": {
+            "type": "string",
+            "description": "write output json data to",
+            "defval": "transaction_report.json",
+            "required": false
         }
-    },
+   },
     "multiflexi": "1.10.2.0"
 }

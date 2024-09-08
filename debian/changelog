@@ -1,8 +1,15 @@
-fiobank-statement-downloader (0.3.0) UNRELEASED; urgency=medium
+fiobank-statement-downloader (0.4.0) UNRELEASED; urgency=medium
 
+  * Strict Types used now
+
+ -- vitex <info@vitexsoftware.cz>  Sun, 08 Sep 2024 22:39:30 +0200
+
+fiobank-statement-downloader (0.3.0) unstable; urgency=medium
+
+  [ vitezslav.dvorak@spojenet.cz ]
   * Localization added
 
- --  <vitezslav.dvorak@spojenet.cz>  Thu, 20 Jun 2024 13:50:03 +0200
+ -- vitex <info@vitexsoftware.cz>  Sun, 08 Sep 2024 22:39:16 +0200
 
 fiobank-statement-downloader (0.2.1) unstable; urgency=medium
 
