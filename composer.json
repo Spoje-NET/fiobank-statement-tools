@@ -1,6 +1,6 @@
 {
-    "name": "spojenet/fiobank-statement-downloader",
-    "description": "FioBank bank statement downloader",
+    "name": "spojenet/fiobank-statement-tools",
+    "description": "FioBank bank statement tools",
     "license": "MIT",
     "authors": [
         {

@@ -1,0 +1,7 @@
+debian/conf/composer.json       usr/lib/fiobank-statement-tools/
+src/*			        usr/lib/fiobank-statement-tools/
+src/SpojeNet/FioApi/*           usr/lib/fiobank-statement-tools/SpojeNet/FioApi/
+bin/*                           usr/bin/
+.env.example                    usr/share/doc/fiobank-statement-tools
+io.github.spoje_net.fiobank_statement_downloader.metainfo.xml /usr/share/metainfo/
+fiobank-statement-downloader.svg            /usr/share/icons/hicolor/scalable/apps/

@@ -1,5 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: fiobank-statement-downloader
+Upstream-Name: fiobank-statement-tools
 Upstream-Contact: <preferred name and address to reach the upstream project>
 Source: <url://example.com>
 #
@@ -11,7 +11,7 @@ Files:      .env
             .vscode/settings.json
             Makefile
             README.md
-            bin/fiobank-statement-downloader
+            bin/fiobank-statement-tools
             composer.json
             composer.lock
             nbproject/configs/Report.properties
@@ -30,12 +30,12 @@ Files:      .env
             debian/conf/composer.json
             debian/control
             debian/copyright
-            debian/fiobank-statement-downloader.install
-            debian/fiobank-statement-downloader.postinst
+            debian/fiobank-statement-tools.install
+            debian/fiobank-statement-tools.postinst
             debian/links
-            debian/multiflexi-fiobank-statement-downloader.install
-            debian/multiflexi-fiobank-statement-downloader.postinst
-            debian/multiflexi-fiobank-statement-downloader.prerm
+            debian/multiflexi-fiobank-statement-tools.install
+            debian/multiflexi-fiobank-statement-tools.postinst
+            debian/multiflexi-fiobank-statement-tools.prerm
             debian/postrm
             debian/preinst
             debian/prerm
@@ -45,21 +45,21 @@ Files:      .env
             debian/tests/control
             debian/upstream/metadata
             debian/watch
-            fiobank-statement-downloader.svg
+            fiobank-statement-tools.svg
             fiobank-statement-mailer.svg
             fiobank-transaction-report.svg
             i18n/cs_CZ/LC_MESSAGES/fio-statement-tools.mo
             i18n/cs_CZ/LC_MESSAGES/fio-statement-tools.po
             i18n/en_US/LC_MESSAGES/fio-statement-tools.mo
             i18n/en_US/LC_MESSAGES/fio-statement-tools.po
-            io.github.spoje_net.fiobank_statement_downloader.metainfo.xml
-            multiflexi/fb_statement_downloader.multiflexi.app.json
+            io.github.spoje_net.fiobank_statement_tools.metainfo.xml
+            multiflexi/fb_statement_tools.multiflexi.app.json
             multiflexi/fb_statement_mailer.multiflexi.app.json
             multiflexi/fb_transaction_report.multiflexi.app.json
             nbproject/private/private.xml
             nbproject/project.xml
-            src/SpojeNet/FioApi/Downloader.php
-            src/fiobank-statement-downloader.php
+            src/SpojeNet/FioApi/tools.php
+            src/fiobank-statement-tools.php
             src/fiobank-statement-mailer.php
             src/fiobank-transaction-report.php
             tests/bootstrap.php

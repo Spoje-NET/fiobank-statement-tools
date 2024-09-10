@@ -27,10 +27,10 @@ phar:
 	phar-composer build .
 
 buildimage:
-	docker build -f Containerfile -t spojenet/fiobank-statement-downloader:latest .
+	docker build -f Containerfile -t spojenet/fiobank-statement-tools:latest .
 
 buildx:
-	docker buildx build -f Containerfile . --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag spojenet/fiobank-statement-downloader:latest
+	docker buildx build -f Containerfile . --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag spojenet/fiobank-statement-tools:latest
 
 drun:
-	docker run --env-file .env spojenet/fiobank-statement-downloader:latest
+	docker run --env-file .env spojenet/fiobank-statement-tools:latest

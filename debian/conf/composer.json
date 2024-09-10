@@ -1,6 +1,6 @@
 {
-  "name": "spojenet/fiobank-statement-downloader",
-  "description": "fiobank  account statement downloader for AbraFlexi",
+  "name": "spojenet/fiobank-statement-tools",
+  "description": "fiobank  account statement tools for AbraFlexi",
   "license": "MIT",
   "version": "0.1.0",
   "authors": [
@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "SpojeNet\\FioApi\\": "/usr/lib/fiobank-statement-downloader/SpojeNet/FioApi/"
+      "SpojeNet\\FioApi\\": "/usr/lib/fiobank-statement-tools/SpojeNet/FioApi/"
     }
   },
   "repositories": [

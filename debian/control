@@ -1,20 +1,20 @@
-Source: fiobank-statement-downloader
+Source: fiobank-statement-tools
 Section: unknown
 Priority: optional
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
 Build-Depends: debhelper-compat (= 12)
 Standards-Version: 4.5.0
-Homepage: https://github.com/VitexSoftware/fiobank-statement-downloader
+Homepage: https://github.com/Spoje-NET/fiobank-statement-tools
 
-Package: fiobank-statement-downloader
+Package: fiobank-statement-tools
 Architecture: all
 Depends: ${misc:Depends}, php-mhujer-fio-api (>=5.0.1), php-vitexsoftware-ease-core
 Suggests: multiflexi
-Description: Download your Raiffeisen Bank Statements
+Description: Download your FioBank Statements
  Download statements to disk in requested format and within given time
 
-Package: multiflexi-fiobank-statement-downloader
+Package: multiflexi-fiobank-statement-tools
 Architecture: all
-Depends: fiobank-statement-downloader, multiflexi
-Description: Raiffeisen Bank statement downloader to MultiFlexi
- Allow use of Raiffeisen Bank statement downloader in MultiFlexi environment
+Depends: fiobank-statement-tools, multiflexi
+Description: Fio Bank statement downoloade, mailer and reporter
+ Allow use of FioBank statement tools in MultiFlexi environment

@@ -1,4 +1,4 @@
-fiobank-statement-downloader (0.4.0) UNRELEASED; urgency=medium
+fiobank-statement-tools (0.4.0) UNRELEASED; urgency=medium
 
   * Strict Types used now
 
