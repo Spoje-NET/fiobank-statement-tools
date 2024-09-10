@@ -104,7 +104,7 @@ if (empty($transactionList) === false) {
             case 'Inkaso z účtu':
             case 'Poplatek - pojištění hypoték':
             default:
-                $downloader->addStatusMessage(_('Unhandled Operation').': '.$type, 'warning');
+                $downloader->addStatusMessage(_('Unhandled Operation') . ': ' . $type, 'warning');
                 $direction = null;
 
                 break;

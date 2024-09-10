@@ -9,6 +9,7 @@
     "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
     "requirements": "FioBank",
     "ociimage": "",
+    "uuid": "3d987aa7-906c-4a23-894e-bf160c2780f0",
     "topics": "FioBank,Transaction,Json,Report",
     "environment": {
         "FIO_TOKEN": {
