@@ -1,10 +1,13 @@
 #!/bin/sh
-# postinst script for multiflexi-fiobank-statement-downloader
+# postinst script for multiflexi-fiobank-statement-tools
+set -e
+
 set -e
 
 . /usr/share/debconf/confmodule
 
-for file in `ls /usr/lib/fiobank-statement-downloader/multiflexi/*.json`
+APPLICATION=`echo $DPKG_MAINTSCRIPT_PACKAGE | sed 's/multiflexi-//'`
+for file in `ls /usr/lib/$APPLICATION/multiflexi/*.json`
 do
 	multiflexi-json2app $file
 done
