@@ -23,9 +23,7 @@ namespace SpojeNet\FioApi;
 class Downloader extends \FioApi\Downloader
 {
     use \Ease\Logger\Logging;
-
     protected \DateTime $since;
-
     protected \DateTime $until;
 
     /**
@@ -74,8 +72,8 @@ class Downloader extends \FioApi\Downloader
 
                 break;
             case 'this_year':
-                $this->since = new \DateTime('first day of January ' . date('Y'));
-                $this->until = new \DateTime('last day of December' . date('Y'));
+                $this->since = new \DateTime('first day of January '.date('Y'));
+                $this->until = new \DateTime('last day of December'.date('Y'));
 
                 break;
             case 'January':  // 1
@@ -90,13 +88,13 @@ class Downloader extends \FioApi\Downloader
             case 'October':  // 10
             case 'November': // 11
             case 'December': // 12
-                $this->since = new \DateTime('first day of ' . $scope . ' ' . date('Y'));
-                $this->until = new \DateTime('last day of ' . $scope . ' ' . date('Y'));
+                $this->since = new \DateTime('first day of '.$scope.' '.date('Y'));
+                $this->until = new \DateTime('last day of '.$scope.' '.date('Y'));
 
                 break;
 
             default:
-                throw new \Exception('Unknown scope ' . $scope);
+                throw new \Exception('Unknown scope '.$scope);
         }
 
         if (($scope !== 'auto') && ($scope !== 'today') && ($scope !== 'yesterday')) {

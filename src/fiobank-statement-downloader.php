@@ -47,36 +47,36 @@ $subject = sprintf(
     $period->getEndDate()->format('d/m/Y'),
 );
 
-$destDir = \array_key_exists(1, $argv) ? $argv[1] : getcwd() . '/';
+$destDir = \array_key_exists(1, $argv) ? $argv[1] : getcwd().'/';
 $format = \array_key_exists(2, $argv) ? $argv[2] : 'pdf';
 
 $client = $downloader->getClient();
 
-$url = \FioApi\UrlBuilder::BASE_URL . 'by-id/' . Shared::cfg('FIO_TOKEN') . '/' . $start->format('Y') . '/' . $start->format('n') . '/transactions.' . $format;
+$url = \FioApi\UrlBuilder::BASE_URL.'by-id/'.Shared::cfg('FIO_TOKEN').'/'.$start->format('Y').'/'.$start->format('n').'/transactions.'.$format;
 
 try {
-    $filename = $destDir . strtolower(Shared::cfg('FIO_TOKEN_NAME')) . '-' . $start->format('Y') . '_' . $start->format('n') . '.' . $format;
+    $filename = $destDir.strtolower(Shared::cfg('FIO_TOKEN_NAME')).'-'.$start->format('Y').'_'.$start->format('n').'.'.$format;
     $response = $client->request(
         'get',
         $url,
         ['verify' => Composer\CaBundle\CaBundle::getSystemCaRootBundlePath()],
     );
     $saved = file_put_contents($filename, $response->getBody());
-    $downloader->addStatusMessage($subject . ': ' . $filename . ' ' . _('saved'), $saved ? 'success' : 'error');
+    $downloader->addStatusMessage($subject.': '.$filename.' '._('saved'), $saved ? 'success' : 'error');
 
     exit($saved ? 0 : 1);
 } catch (\GuzzleHttp\Exception\BadResponseException $e) {
     switch ($e->getCode()) {
         case 409:
-            $downloader->addStatusMessage($e->getCode() . ': ' . _('You can use one token for API call every 30 seconds'), 'error');
+            $downloader->addStatusMessage($e->getCode().': '._('You can use one token for API call every 30 seconds'), 'error');
 
             break;
         case 500:
-            $downloader->addStatusMessage($e->getCode() . ': ' . _('Server returned 500 Internal Error (probably invalid token?)'), 'error');
+            $downloader->addStatusMessage($e->getCode().': '._('Server returned 500 Internal Error (probably invalid token?)'), 'error');
 
             break;
         case 404:
-            $downloader->addStatusMessage($e->getCode() . ': ' . sprintf(_('Url not found %s'), $url), 'error');
+            $downloader->addStatusMessage($e->getCode().': '.sprintf(_('Url not found %s'), $url), 'error');
 
             break;
 
