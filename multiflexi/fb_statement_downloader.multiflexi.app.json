@@ -10,6 +10,7 @@
     "requirements": "FioBank",
     "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
     "topics": "FioBank, Statements, Downloader",
+    "uuid": "51b42eb3-ef0a-48b2-81ba-17c270229594",
     "environment": {
         "FIO_TOKEN": {
             "type": "password",
