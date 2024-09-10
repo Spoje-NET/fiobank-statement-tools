@@ -10,11 +10,13 @@ Package: fiobank-statement-tools
 Architecture: all
 Depends: ${misc:Depends}, php-mhujer-fio-api (>=5.0.1), php-vitexsoftware-ease-core
 Suggests: multiflexi
+Replaces: fiobank-statement-downloader
 Description: Download your FioBank Statements
  Download statements to disk in requested format and within given time
 
 Package: multiflexi-fiobank-statement-tools
 Architecture: all
+Replaces: multiflexi-fiobank-statement-downloader
 Depends: fiobank-statement-tools, multiflexi
 Description: Fio Bank statement downoloade, mailer and reporter
  Allow use of FioBank statement tools in MultiFlexi environment
