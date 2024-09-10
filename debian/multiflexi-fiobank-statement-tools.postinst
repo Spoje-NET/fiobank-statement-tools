@@ -2,8 +2,6 @@
 # postinst script for multiflexi-fiobank-statement-tools
 set -e
 
-set -e
-
 . /usr/share/debconf/confmodule
 
 APPLICATION=`echo $DPKG_MAINTSCRIPT_PACKAGE | sed 's/multiflexi-//'`
