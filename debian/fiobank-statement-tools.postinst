@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-composer-debian fiobank-statement-downloader
+composer-debian fiobank-statement-tools
 
 case "$1" in
     configure)
