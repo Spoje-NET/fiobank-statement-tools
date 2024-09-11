@@ -5,7 +5,7 @@
     "executable": "fiobank-statement-downloader",
     "setup": "",
     "cmdparams": "{STATEMETNTS_DIR} {STATEMETNTS_FORMAT}",
-    "deploy": "apt install fiobank-statement-downloader",
+    "deploy": "apt install fiobank-statement-tools",
     "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
     "requirements": "FioBank",
     "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
