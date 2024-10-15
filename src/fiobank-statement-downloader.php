@@ -70,13 +70,19 @@ try {
         case 409:
             $downloader->addStatusMessage($e->getCode().': '._('You can use one token for API call every 30 seconds'), 'error');
 
+            exit(409);
+
             break;
         case 500:
             $downloader->addStatusMessage($e->getCode().': '._('Server returned 500 Internal Error (probably invalid token?)'), 'error');
 
+            exit(500);
+
             break;
         case 404:
             $downloader->addStatusMessage($e->getCode().': '.sprintf(_('Url not found %s'), $url), 'error');
+
+            exit(404);
 
             break;
 
