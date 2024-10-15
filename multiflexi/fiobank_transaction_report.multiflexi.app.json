@@ -10,7 +10,7 @@
     "requirements": "FioBank",
     "ociimage": "",
     "uuid": "3d987aa7-906c-4a23-894e-bf160c2780f0",
-    "topics": "FioBank,Transaction,Json,Report",
+    "topics": "FioBank,Transactions,Json,Report,Check",
     "environment": {
         "FIO_TOKEN": {
             "type": "password",
