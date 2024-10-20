@@ -1,8 +1,14 @@
-fiobank-statement-tools (0.4.0) UNRELEASED; urgency=medium
+fiobank-statement-tools (0.4.1) UNRELEASED; urgency=medium
+
+  * SVG Icons fix
+
+ -- vitex <info@vitexsoftware.cz>  Sun, 20 Oct 2024 18:09:03 +0200
+
+fiobank-statement-tools (0.4.0) unstable; urgency=medium
 
   * Strict Types used now
 
- -- vitex <info@vitexsoftware.cz>  Sun, 08 Sep 2024 22:39:30 +0200
+ -- vitex <info@vitexsoftware.cz>  Sun, 20 Oct 2024 18:08:53 +0200
 
 fiobank-statement-downloader (0.3.0) unstable; urgency=medium
 
