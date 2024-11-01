@@ -9,6 +9,7 @@ case "$1" in
         do
           multiflexi-json-app-remover $file
         done
+        rm -rf /usr/lib/fiobank-statement-downloader/multiflexi/
     ;;
 
     upgrade|deconfigure)
