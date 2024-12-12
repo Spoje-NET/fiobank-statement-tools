@@ -25,6 +25,8 @@ if (\array_key_exists(1, $argv) && $argv[1] === '-h') {
     exit;
 }
 
+$exitCode = 0;
+
 Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], \array_key_exists(3, $argv) ? $argv[3] : '../.env');
 \Ease\Locale::singleton(null, '../i18n', 'fio-statement-tools');
 
@@ -66,31 +68,30 @@ try {
 
     exit($saved ? 0 : 1);
 } catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    $exitCode = $e->getCode();
+
     switch ($e->getCode()) {
         case 409:
             $downloader->addStatusMessage($e->getCode().': '._('You can use one token for API call every 30 seconds'), 'error');
-
-            exit(409);
 
             break;
         case 500:
             $downloader->addStatusMessage($e->getCode().': '._('Server returned 500 Internal Error (probably invalid token?)'), 'error');
 
-            exit(500);
-
             break;
         case 404:
             $downloader->addStatusMessage($e->getCode().': '.sprintf(_('Url not found %s'), $url), 'error');
 
-            exit(404);
-
             break;
 
         default:
+            $downloader->addStatusMessage($e->getCode().': '.$e->getMessage(), 'error');
+
             break;
     }
 }
 
+exit($exitCode);
 // $engine->setScope(Shared::cfg('STATEMENT_IMPORT_SCOPE', 'last_month'));
 //
 // $statements = $engine->getStatements(Shared::cfg('ACCOUNT_CURRENCY', 'CZK'), Shared::cfg('STATEMENT_LINE', 'MAIN'));

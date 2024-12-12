@@ -20,12 +20,12 @@ use Ease\Shared;
 require_once '../vendor/autoload.php';
 
 \define('APP_NAME', 'FioBank Statement Reporter');
-
+$exitCode = 0;
 $options = getopt('o::e::', ['output::environment::']);
 Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], \array_key_exists(1, $argv) ? $argv[1] : '../.env');
 \Ease\Locale::singleton(null, '../i18n', 'fio-statement-tools');
 
-$destination = \array_key_exists('output', $options) ? $options['output'] : \Ease\Shared::cfg('RESULT_FILE', 'php://stdout');
+$destination = \array_key_exists('output', $options) ? $options['output'] : Shared::cfg('RESULT_FILE', 'php://stdout');
 $downloader = new \SpojeNet\FioApi\Downloader(Shared::cfg('FIO_TOKEN'));
 
 if (Shared::cfg('APP_DEBUG', false)) {
@@ -50,27 +50,25 @@ $payments = [
 try {
     $transactionList = $downloader->downloadFromTo($downloader->getSince(), $downloader->getUntil());
 } catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    $exitCode = $e->getCode();
+
     switch ($e->getCode()) {
         case 409:
             $downloader->addStatusMessage($e->getCode().': '._('You can use one token for API call every 30 seconds'), 'error');
-
-            exit(409);
 
             break;
         case 500:
             $downloader->addStatusMessage($e->getCode().': '._('Server returned 500 Internal Error (probably invalid token?)'), 'error');
 
-            exit(500);
-
             break;
         case 404:
-            $downloader->addStatusMessage($e->getCode().': '.sprintf(_('Url not found %s'), $url), 'error');
-
-            exit(404);
+            $downloader->addStatusMessage($e->getCode().': '.sprintf(_('Url not found %s'), $e->getRequest()->getUri()), 'error');
 
             break;
 
         default:
+            $downloader->addStatusMessage($e->getCode().': '.$e->getMessage(), 'error');
+
             break;
     }
 }
@@ -146,7 +144,7 @@ if (empty($transactionList) === false) {
     $payments['status'] = 'no statements returned';
 }
 
-$written = file_put_contents($destination, json_encode($payments, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
+$written = file_put_contents($destination, json_encode($payments, Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
 $downloader->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
 
-exit($written ? 0 : 1);
+exit($exitCode ?: ($written ? 0 : 1));

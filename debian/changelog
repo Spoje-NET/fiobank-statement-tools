@@ -1,8 +1,14 @@
-fiobank-statement-tools (0.4.1) UNRELEASED; urgency=medium
+fiobank-statement-tools (1.0.0) UNRELEASED; urgency=medium
+
+  * custom scope added
+
+ -- vitex <info@vitexsoftware.cz>  Thu, 12 Dec 2024 14:11:44 +0100
+
+fiobank-statement-tools (0.4.1) unstable; urgency=medium
 
   * SVG Icons fix
 
- -- vitex <info@vitexsoftware.cz>  Sun, 20 Oct 2024 18:09:03 +0200
+ -- vitex <info@vitexsoftware.cz>  Thu, 12 Dec 2024 14:11:31 +0100
 
 fiobank-statement-tools (0.4.0) unstable; urgency=medium
 
