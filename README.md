@@ -1,5 +1,12 @@
-Fiobank Statement Downloader
-============================
+Fiobank Statement Tools
+=======================
+
+
+[![wakatime](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/636c0922-84fd-4eec-aaa1-356b712caae3.svg)](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/636c0922-84fd-4eec-aaa1-356b712caae3)
+
+
+## Fiobank Statement Downloader
+
 
 ![fiobank-statement-downloader](fiobank-statement-downloader.svg?raw=true)
 
