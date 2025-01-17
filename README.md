@@ -151,7 +151,7 @@ For Linux, .deb packages are available. Please use the repo:
     echo "deb http://repo.vitexsoftware.com $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
     sudo wget -O /etc/apt/trusted.gpg.d/vitexsoftware.gpg http://repo.vitexsoftware.cz/keyring.gpg
     sudo apt update
-    sudo apt install fiobank statement tools
+    sudo apt install fiobank-statement-tools
 ```
 
 After installing the package, the following new commands are available in the system:
