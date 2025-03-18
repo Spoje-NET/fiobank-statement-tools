@@ -22,7 +22,12 @@ require_once '../vendor/autoload.php';
 \define('APP_NAME', 'FioBank Statement Reporter');
 $exitCode = 0;
 $options = getopt('o::e::', ['output::environment::']);
-Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], \array_key_exists(1, $argv) ? $argv[1] : '../.env');
+\Ease\Shared::init(
+    ['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'],
+    \array_key_exists('environment', $options) ? $options['environment'] : (\array_key_exists('e', $options) ? $options['e'] : '../.env'),
+);
+$destination = \array_key_exists('output', $options) ? $options['output'] : (\array_key_exists('o', $options) ? $options['o'] : \Ease\Shared::cfg('RESULT_FILE', 'php://stdout'));
+
 \Ease\Locale::singleton(null, '../i18n', 'fio-statement-tools');
 
 $destination = \array_key_exists('output', $options) ? $options['output'] : Shared::cfg('RESULT_FILE', 'php://stdout');

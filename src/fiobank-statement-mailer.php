@@ -28,8 +28,12 @@ if (\array_key_exists(1, $argv) && $argv[1] === '-h') {
 
 $exitCode = 0;
 
-Shared::init(['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'], \array_key_exists(3, $argv) ? $argv[3] : '../.env');
-$downloader = new \SpojeNet\FioApi\Downloader(Shared::cfg('FIO_TOKEN'));
+$options = getopt('o::e::', ['output::environment::']);
+\Ease\Shared::init(
+    ['FIO_TOKEN', 'FIO_TOKEN_NAME', 'ACCOUNT_NUMBER'],
+    \array_key_exists('environment', $options) ? $options['environment'] : (\array_key_exists('e', $options) ? $options['e'] : '../.env'),
+);
+$destination = \array_key_exists('output', $options) ? $options['output'] : (\array_key_exists('o', $options) ? $options['o'] : \Ease\Shared::cfg('RESULT_FILE', 'php://stdout'));
 
 if (Shared::cfg('APP_DEBUG', false)) {
     $downloader->logBanner();
