@@ -1,8 +1,15 @@
-fiobank-statement-tools (1.0.0) UNRELEASED; urgency=medium
+fiobank-statement-tools (1.0.1) UNRELEASED; urgency=medium
 
+  * MultiFlexi definition update
+
+ -- Vitex <vitezslav.dvorak@spojenet.cz>  Fri, 11 Jul 2025 16:34:25 +0200
+
+fiobank-statement-tools (1.0.0) unstable; urgency=medium
+
+  [ vitex ]
   * custom scope added
 
- -- vitex <info@vitexsoftware.cz>  Thu, 12 Dec 2024 14:11:44 +0100
+ -- Vitex <vitezslav.dvorak@spojenet.cz>  Fri, 11 Jul 2025 16:34:09 +0200
 
 fiobank-statement-tools (0.4.1) unstable; urgency=medium
 

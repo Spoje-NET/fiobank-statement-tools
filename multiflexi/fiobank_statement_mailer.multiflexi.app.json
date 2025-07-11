@@ -59,7 +59,24 @@
             "description": "Reply-To email address",
             "defval": "",
             "required": false
+        },
+        "EASE_LOGGER": {
+            "type": "string",
+            "description": "write log messages using",
+            "defval": "console|syslog",
+            "required": false
+        },
+        "LANG": {
+            "type": "set",
+            "description": "Locale for this application",
+            "defval": "cs_CZ",
+            "required": false,
+            "options": [
+                "cs_CZ",
+                "en_US"
+            ]
         }
+
     },
     "multiflexi": "1.10.2.0"
 }

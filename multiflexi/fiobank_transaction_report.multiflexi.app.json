@@ -41,7 +41,24 @@
             "description": "write output json data to",
             "defval": "transaction_report.json",
             "required": false
+        },
+        "EASE_LOGGER": {
+            "type": "string",
+            "description": "write log messages using",
+            "defval": "console|syslog",
+            "required": false
+        },
+        "LANG": {
+            "type": "set",
+            "description": "Locale for this application",
+            "defval": "cs_CZ",
+            "required": false,
+            "options": [
+                "cs_CZ",
+                "en_US"
+            ]
         }
+
    },
     "multiflexi": "1.10.2.0"
 }

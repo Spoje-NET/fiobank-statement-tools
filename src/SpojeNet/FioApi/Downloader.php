@@ -19,6 +19,8 @@ namespace SpojeNet\FioApi;
  * Description of Downloader.
  *
  * @author vitex
+ *
+ * @no-named-arguments
  */
 class Downloader extends \FioApi\Downloader
 {

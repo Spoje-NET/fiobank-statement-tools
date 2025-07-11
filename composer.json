@@ -17,14 +17,14 @@
     "bin": ["src/fiobank-statement-downloader.php"],
     "require": {
         "mhujer/fio-api-php": "dev-master",
-        "vitexsoftware/ease-core": "^1.45"
+        "vitexsoftware/ease-core": "^1.48"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
         "phpstan/phpstan": "*",
-        "friendsofphp/php-cs-fixer": "^3.61",
-        "ergebnis/composer-normalize": "^2.43",
-        "ergebnis/php-cs-fixer-config": "^6.34"
+        "friendsofphp/php-cs-fixer": "^3.82",
+        "ergebnis/composer-normalize": "^2.47",
+        "ergebnis/php-cs-fixer-config": "^6.49"
     },
     "config": {
         "allow-plugins": {
