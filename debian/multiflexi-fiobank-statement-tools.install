@@ -1,1 +1,2 @@
-multiflexi/*  usr/lib/fiobank-statement-tools/multiflexi
+multiflexi/*.app.json  usr/lib/fiobank-statement-tools/multiflexi
+multiflexi/*.svg       usr/share/multiflexi/images
