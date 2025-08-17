@@ -7,9 +7,9 @@
     "cmdparams": "",
     "deploy": "apt install fiobank-statement-tools",
     "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
-    "requirements": "FioBank",
+    "requirements": ["FioBank"],
     "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
-    "topics": "FioBank, Statements, Downloader",
+    "topics": ["FioBank", "Statements", "Downloader"],
     "uuid": "349491f1-ccc4-466a-950a-ce9baefb6eb3",
     "environment": {
         "FIO_TOKEN": {
