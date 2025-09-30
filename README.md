@@ -1,9 +1,17 @@
 Fiobank Statement Tools
 =======================
 
+A comprehensive suite of PHP tools for working with FioBank statements and transactions. This toolset provides automated downloading, emailing, and reporting capabilities for FioBank account data.
 
 [![wakatime](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/636c0922-84fd-4eec-aaa1-356b712caae3.svg)](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/636c0922-84fd-4eec-aaa1-356b712caae3)
 
+## Tools Overview
+
+This package includes three main tools:
+
+1. **fiobank-statement-downloader** - Downloads bank statements in various formats
+2. **fiobank-statement-mailer** - Downloads and emails statements to recipients
+3. **fiobank-transaction-report** - Generates JSON transaction reports
 
 ## Fiobank Statement Downloader
 
@@ -24,17 +32,21 @@ Example output when EASE_LOGGER=console
 01/16/2024 16:46:12 🌼 ❲FioBank Statement Downloader⦒SpojeNet\FioApi\Downloader❳ Výpis z účtu FIO - 12/01/23 to 12/31/23: hlavni_fio-2023_12.pdf saved
 ```
 
-Configuration
--------------
+### Configuration
 
-Please set this environment variables or specify path to .env file
+All tools use environment variables for configuration. You can either set them in your environment or create a `.env` file.
 
-* `FIO_TOKEN`='KitMuWyajissajPishtuwolth8ojyukMaldryavAcsOotuhuaksaf'
-* `FIO_TOKEN_NAME`='Fio Main'
-* `ACCOUNT_NUMBER`=666666666
+**Required Configuration:**
+* `FIO_TOKEN` - Your FioBank API token with read permissions (e.g., 'KitMuWyajissajPishtuwolth8ojyukMaldryavAcsOotuhuaksaf')
+* `FIO_TOKEN_NAME` - Descriptive name for your token (e.g., 'Fio Main')
+* `ACCOUNT_NUMBER` - Your FioBank account number (e.g., 666666666)
 
-* `APP_DEBUG`=True
-* `EASE_LOGGER`=syslog|eventlog|console
+**Optional Configuration:**
+* `STATEMENTS_DIR` - Directory to save statements (default: current directory)
+* `STATEMENTS_FORMAT` - Statement format: pdf, csv, gpc, html, json, ofx, xml (default: pdf)
+* `APP_DEBUG` - Enable debug mode (True/False)
+* `EASE_LOGGER` - Logging method: syslog, eventlog, or console
+* `LANG` - Application locale: cs_CZ or en_US (default: cs_CZ)
 
 Availble Import Scope Values
 ----------------------------
@@ -61,24 +73,53 @@ Availble Import Scope Values
 * `2024-08-05>2024-08-11` - custom scope
 * `2024-10-11` - only specific day
 
-fiobank-statement-mailer
---------------------------
+## Fiobank Statement Mailer
 
 ![Mailer](fiobank-statement-mailer.svg?raw=true)
 
-Share configuration with downloader and use few own keys:
+Downloads FioBank statements and sends them via email to specified recipients.
 
-* `STATEMENTS_FROM`
-* `STATEMENTS_REPLYTO`
-* `STATEMENTS_CC`
-* `EASE_SMTP` - optional json string `{"port": "587", "starttls": true, "auth": true, "host": "smtp.office365.com", "username": "@spojenet.cz", "password": "pw"}`
+### Usage
 
-fiobank-transaction-report
---------------------------
+```shell
+fiobank-statement-mailer [path/to/.env]
+```
+
+### Configuration
+
+Shares basic configuration with the downloader and uses additional email-specific environment variables:
+
+**Email Configuration:**
+* `STATEMENTS_TO` - Recipient's email address (required)
+* `STATEMENTS_FROM` - Sender's email address
+* `STATEMENTS_REPLYTO` - Reply-To email address
+* `STATEMENTS_CC` - CC email address
+* `STATEMENTS_DIR` - Temporary folder for downloaded statements (default: /tmp/)
+* `EASE_SMTP` - Optional SMTP configuration as JSON string:
+  ```json
+  {
+    "port": "587",
+    "starttls": true,
+    "auth": true,
+    "host": "smtp.office365.com",
+    "username": "your@email.com",
+    "password": "your_password"
+  }
+  ```
+
+## Fiobank Transaction Report
 
 ![Report](fiobank-transaction-report.svg?raw=true)
 
-export fio transactions overview as json
+Generates a comprehensive JSON report of FioBank transactions, providing detailed insights into account activity.
+
+### Usage
+
+```shell
+fiobank-transaction-report [path/to/.env]
+```
+
+### Output Example
 
 ```json
 {
@@ -139,30 +180,102 @@ export fio transactions overview as json
 }
 ```
 
+## Features
+
+- **Multiple Statement Formats**: Support for PDF, CSV, GPC, HTML, JSON, OFX, and XML formats
+- **Automated Email Delivery**: Send statements directly to recipients via email
+- **Transaction Analysis**: Generate detailed JSON reports of account activity
+- **Flexible Scheduling**: Import data for specific date ranges or predefined periods
+- **MultiFlexi Integration**: Ready for deployment in MultiFlexi application platform
+- **Comprehensive Logging**: Built-in logging with multiple output options
+- **Environment-based Configuration**: Easy setup using environment variables or .env files
+
+## Requirements
+
+- PHP 7.4 or higher
+- FioBank API token with read permissions
+- Valid FioBank account
+
+## Library Dependencies
+
 Created using the library [fio-api-php](https://github.com/mhujer/fio-api-php)
 
-MultiFlexi
-----------
+## MultiFlexi Integration
 
-FioBank statement tools is ready for run as [MultiFlexi](https://multiflexi.eu) application.
-See the full list of ready-to-run applications within the MultiFlexi platform on the [application list page](https://www.multiflexi.eu/apps.php).
+These FioBank statement tools are fully compatible with [MultiFlexi](https://multiflexi.eu) - a powerful application management platform. MultiFlexi allows you to:
+
+- **Easy Deployment**: Install and configure applications through a web interface
+- **Environment Management**: Manage configuration variables securely
+- **Scheduled Execution**: Set up automated statement downloads and reports
+- **Multi-Environment Support**: Run applications in different environments
+- **Container Support**: Deploy using Docker/OCI images
+
+All three tools (`fiobank-statement-downloader`, `fiobank-statement-mailer`, `fiobank-transaction-report`) are available as ready-to-run MultiFlexi applications.
 
 [![MultiFlexi App](https://github.com/VitexSoftware/MultiFlexi/blob/main/doc/multiflexi-app.svg)](https://www.multiflexi.eu/apps.php)
 
-Debian/Ubuntu
--------------
+See the full list of ready-to-run applications within the MultiFlexi platform on the [application list page](https://www.multiflexi.eu/apps.php).
 
-For Linux, .deb packages are available. Please use the repo:
+## Installation
+
+### Debian/Ubuntu
+
+For Linux distributions based on Debian/Ubuntu, .deb packages are available through the VitexSoftware repository:
 
 ```shell
-    echo "deb http://repo.vitexsoftware.com $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
-    sudo wget -O /etc/apt/trusted.gpg.d/vitexsoftware.gpg http://repo.vitexsoftware.cz/keyring.gpg
-    sudo apt update
-    sudo apt install fiobank-statement-tools
+# Add the repository
+echo "deb http://repo.vitexsoftware.com $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
+
+# Add the GPG key
+sudo wget -O /etc/apt/trusted.gpg.d/vitexsoftware.gpg http://repo.vitexsoftware.cz/keyring.gpg
+
+# Update package list and install
+sudo apt update
+sudo apt install fiobank-statement-tools
 ```
 
-After installing the package, the following new commands are available in the system:
+### Composer Installation
 
-* **fiobank-statement-downloader**      - downloads statements from FioBank
-* **fiobank-statement-mailer**          - downloads statements from FioBank and sends them by email
-* **fiobank-transaction-report**        - exports transactions overview as json
+For other systems or development purposes, you can install via Composer:
+
+```shell
+composer require spojenet/fiobank-statement-tools
+```
+
+### Docker/Container Usage
+
+Docker images are available:
+
+```shell
+# Download statements
+docker run spojenet/fiobank-statement-downloader
+
+# Send statements via email
+docker run spojenet/fiobank-statement-mailer
+
+# Generate transaction reports
+docker run spojenet/fiobank-transaction-report
+```
+
+### Available Commands
+
+After installation, the following commands are available:
+
+* **fiobank-statement-downloader** - Downloads statements from FioBank in various formats
+* **fiobank-statement-mailer** - Downloads statements from FioBank and sends them by email
+* **fiobank-transaction-report** - Exports transactions overview as JSON
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Invalid API Token**: Ensure your FIO_TOKEN has read permissions for the specified account
+2. **Account Access**: Verify that ACCOUNT_NUMBER matches your FioBank account
+3. **Date Range Issues**: Check that your requested date range is valid and within API limits
+4. **Email Delivery**: For the mailer tool, ensure SMTP settings are correctly configured
+
+### Getting Help
+
+- **Documentation**: Full documentation is available in the repository
+- **Issues**: Report bugs and request features at [GitHub Issues](https://github.com/Spoje-NET/fiobank-statement-tools/issues)
+- **Support**: Contact info@vitexsoftware.cz for commercial support

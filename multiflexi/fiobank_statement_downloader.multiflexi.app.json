@@ -4,7 +4,7 @@
     "description": "Download FioBank statements to disk",
     "executable": "fiobank-statement-downloader",
     "setup": "",
-    "cmdparams": "{STATEMETNTS_DIR} {STATEMETNTS_FORMAT}",
+    "cmdparams": "{STATEMENTS_DIR} {STATEMENTS_FORMAT}",
     "deploy": "apt install fiobank-statement-tools",
     "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
     "requirements": ["FioBank"],
@@ -40,6 +40,15 @@
             "type": "string",
             "description": "(default) pdf, csv, gpc, html, json, ofx, xml",
             "defval": "pdf",
+            "options": [
+                "pdf",
+                "csv",
+                "gpc",
+                "html",
+                "json",
+                "ofx",
+                "xml"
+            ],
             "required": true
         },
         "EASE_LOGGER": {
