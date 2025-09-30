@@ -37,7 +37,7 @@
             "required": true
         },
         "STATEMENTS_DIR": {
-            "type": "directory",
+            "type": "file-path",
             "description": "Temporary folder for statements downloaded",
             "defval": "/tmp/",
             "required": false
