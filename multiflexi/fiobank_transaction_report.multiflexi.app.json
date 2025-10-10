@@ -18,8 +18,6 @@
         "Check"
     ],
     "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
-    "image": "",
-    "ociimage": "",
     "executable": "fiobank-transaction-report",
     "environment": {
         "FIO_TOKEN": {

@@ -16,7 +16,6 @@
         "Downloader"
     ],
     "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
-    "image": "",
     "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
     "executable": "fiobank-statement-mailer",
     "environment": {
