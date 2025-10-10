@@ -1,64 +1,100 @@
 {
-    "image": "",
-    "name": "Fio transaction report",
-    "description": "FioBank transaction report",
-    "executable": "fiobank-transaction-report",
-    "setup": "",
-    "cmdparams": "",
-    "deploy": "apt install fiobank-statement-tools",
-    "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
-    "requirements": ["FioBank"],
-    "ociimage": "",
+    "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+    "schemaVersion": "3.0.0",
     "uuid": "3d987aa7-906c-4a23-894e-bf160c2780f0",
-    "topics": ["FioBank", "Transactions", "Json", "Report", "Check"],
+    "name": {
+        "en": "Fio transaction report",
+        "cs": "Fio transaction report"
+    },
+    "description": {
+        "en": "FioBank transaction report",
+        "cs": "FioBank transakce report"
+    },
+    "tags": [
+        "FioBank",
+        "Transactions",
+        "Json",
+        "Report",
+        "Check"
+    ],
+    "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
+    "image": "",
+    "ociimage": "",
+    "executable": "fiobank-transaction-report",
     "environment": {
         "FIO_TOKEN": {
             "type": "password",
-            "description": "Token with account read permission",
+            "description": {
+                "en": "Token with account read permission",
+                "cs": "Token with account read permission"
+            },
             "defval": "",
-            "required": true
+            "required": true,
+            "category": "Security"
         },
         "FIO_TOKEN_NAME": {
             "type": "string",
-            "description": "Name of Token used",
+            "description": {
+                "en": "Name of Token used",
+                "cs": "Name of Token used"
+            },
             "defval": "",
-            "required": true
+            "required": true,
+            "category": "Security"
         },
         "ACCOUNT_NUMBER": {
             "type": "string",
-            "description": "Number of Account",
+            "description": {
+                "en": "Number of Account",
+                "cs": "Number of Account"
+            },
             "defval": "",
-            "required": true
+            "required": true,
+            "category": "Other"
         },
-         "TRANSACTION_SCOPE": {
+        "TRANSACTION_SCOPE": {
             "type": "text",
-            "description": "Time scope of transactions downloaded",
+            "description": {
+                "en": "Time scope of transactions downloaded",
+                "cs": "Time scope of transactions downloaded"
+            },
             "defval": "last_month",
-            "required": false
+            "required": false,
+            "category": "Other"
         },
         "RESULT_FILE": {
             "type": "string",
-            "description": "write output json data to",
+            "description": {
+                "en": "write output json data to",
+                "cs": "write output json data to"
+            },
             "defval": "transaction_report.json",
-            "required": false
+            "required": false,
+            "category": "Other"
         },
         "EASE_LOGGER": {
             "type": "string",
-            "description": "write log messages using",
+            "description": {
+                "en": "write log messages using",
+                "cs": "write log messages using"
+            },
             "defval": "console|syslog",
-            "required": false
+            "required": false,
+            "category": "Behavior"
         },
         "LANG": {
             "type": "set",
-            "description": "Locale for this application",
+            "description": {
+                "en": "Locale for this application",
+                "cs": "Locale for this application"
+            },
             "defval": "cs_CZ",
             "required": false,
             "options": [
                 "cs_CZ",
                 "en_US"
-            ]
+            ],
+            "category": "Other"
         }
-
-   },
-    "multiflexi": "1.10.2.0"
+    }
 }

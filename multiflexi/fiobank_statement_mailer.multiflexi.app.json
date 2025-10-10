@@ -1,38 +1,61 @@
 {
-    "image": "",
-    "name": "Fio Statement Mailer",
-    "description": "Send FioBank statements to mail recipient",
-    "executable": "fiobank-statement-mailer",
-    "setup": "",
-    "cmdparams": "",
-    "deploy": "apt install fiobank-statement-tools",
-    "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
-    "requirements": ["FioBank"],
-    "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
-    "topics": ["FioBank", "Statements", "Downloader"],
+    "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+    "schemaVersion": "3.0.0",
     "uuid": "349491f1-ccc4-466a-950a-ce9baefb6eb3",
+    "name": {
+        "en": "Fio Statement Mailer",
+        "cs": "Fio Statement Mailer"
+    },
+    "description": {
+        "en": "Send FioBank statements to mail recipient",
+        "cs": "Odeslat FioBank statements to e-mail recipient"
+    },
+    "tags": [
+        "FioBank",
+        "Statements",
+        "Downloader"
+    ],
+    "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
+    "image": "",
+    "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
+    "executable": "fiobank-statement-mailer",
     "environment": {
         "FIO_TOKEN": {
             "type": "password",
-            "description": "Token with account read permission",
+            "description": {
+                "en": "Token with account read permission",
+                "cs": "Token with account read permission"
+            },
             "defval": "",
-            "required": true
+            "required": true,
+            "category": "Security"
         },
         "FIO_TOKEN_NAME": {
             "type": "string",
-            "description": "Name of Token used",
+            "description": {
+                "en": "Name of Token used",
+                "cs": "Name of Token used"
+            },
             "defval": "",
-            "required": true
+            "required": true,
+            "category": "Security"
         },
         "ACCOUNT_NUMBER": {
             "type": "string",
-            "description": "Number of Account",
+            "description": {
+                "en": "Number of Account",
+                "cs": "Number of Account"
+            },
             "defval": "",
-            "required": true
+            "required": true,
+            "category": "Other"
         },
         "STATEMENTS_FORMAT": {
             "type": "string",
-            "description": "(default) pdf, csv, gpc, html, json, ofx, xml",
+            "description": {
+                "en": "(default) pdf, csv, gpc, html, json, ofx, xml",
+                "cs": "(default) pdf, csv, gpc, html, json, ofx, xml"
+            },
             "defval": "pdf",
             "options": [
                 "pdf",
@@ -43,49 +66,72 @@
                 "ofx",
                 "xml"
             ],
-            "required": true
+            "required": true,
+            "category": "Other"
         },
         "STATEMENTS_DIR": {
             "type": "file-path",
-            "description": "Temporary folder for statements downloaded",
+            "description": {
+                "en": "Temporary folder for statements downloaded",
+                "cs": "Temporary folder for statements downloaded"
+            },
             "defval": "/tmp/",
-            "required": false
+            "required": false,
+            "category": "Other"
         },
         "STATEMENTS_TO": {
             "type": "email",
-            "description": "Recipient's email address",
+            "description": {
+                "en": "Recipient's email address",
+                "cs": "Recipient's email address"
+            },
             "defval": "",
-            "required": true
+            "required": true,
+            "category": "Other"
         },
         "STATEMENTS_FROM": {
             "type": "email",
-            "description": "Sender's email address",
+            "description": {
+                "en": "Sender's email address",
+                "cs": "Odeslater's ee-mail address"
+            },
             "defval": "",
-            "required": false
+            "required": false,
+            "category": "Other"
         },
         "STATEMENTS_REPLYTO": {
             "type": "email",
-            "description": "Reply-To email address",
+            "description": {
+                "en": "Reply-To email address",
+                "cs": "Reply-To email address"
+            },
             "defval": "",
-            "required": false
+            "required": false,
+            "category": "Other"
         },
         "EASE_LOGGER": {
             "type": "string",
-            "description": "write log messages using",
+            "description": {
+                "en": "write log messages using",
+                "cs": "write log messages using"
+            },
             "defval": "console|syslog",
-            "required": false
+            "required": false,
+            "category": "Behavior"
         },
         "LANG": {
             "type": "set",
-            "description": "Locale for this application",
+            "description": {
+                "en": "Locale for this application",
+                "cs": "Locale for this application"
+            },
             "defval": "cs_CZ",
             "required": false,
             "options": [
                 "cs_CZ",
                 "en_US"
-            ]
+            ],
+            "category": "Other"
         }
-
-    },
-    "multiflexi": "1.10.2.0"
+    }
 }
