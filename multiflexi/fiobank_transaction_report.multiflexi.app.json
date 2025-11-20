@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-    "schemaVersion": "3.0.0",
+    "schemaVersion": "3.1.0",
     "uuid": "3d987aa7-906c-4a23-894e-bf160c2780f0",
     "name": {
         "en": "Fio transaction report",
@@ -93,6 +93,40 @@
                 "en_US"
             ],
             "category": "Other"
+        }
+    },
+    "exitCodes": {
+        "0": {
+            "description": {
+                "en": "Success",
+                "cs": "Úspěch"
+            },
+            "severity": "success",
+            "retry": false
+        },
+        "404": {
+            "description": {
+                "en": "Not found - resource does not exist",
+                "cs": "Nenalezeno - zdroj neexistuje"
+            },
+            "severity": "error",
+            "retry": true
+        },
+        "409": {
+            "description": {
+                "en": "Application-specific error code 409",
+                "cs": "Aplikační chybový kód 409"
+            },
+            "severity": "error",
+            "retry": true
+        },
+        "500": {
+            "description": {
+                "en": "Internal server error",
+                "cs": "Interní chyba serveru"
+            },
+            "severity": "critical",
+            "retry": true
         }
     }
 }

@@ -279,3 +279,13 @@ After installation, the following commands are available:
 - **Documentation**: Full documentation is available in the repository
 - **Issues**: Report bugs and request features at [GitHub Issues](https://github.com/Spoje-NET/fiobank-statement-tools/issues)
 - **Support**: Contact info@vitexsoftware.cz for commercial support
+
+## Exit Codes
+
+Applications in this package use the following exit codes:
+
+- `0`: Success
+- `1`: General error
+- `404`: Not found - resource does not exist
+- `409`: Conflict - request conflicts with server state
+- `500`: Internal server error
