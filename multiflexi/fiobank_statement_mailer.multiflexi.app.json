@@ -1,178 +1,179 @@
 {
-    "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-    "schemaVersion": "3.1.0",
-    "uuid": "349491f1-ccc4-466a-950a-ce9baefb6eb3",
-    "name": {
-        "en": "Fio Statement Mailer",
-        "cs": "Fio Statement Mailer"
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+  "schemaVersion": "3.2.1",
+  "version": "1.0.1",
+  "uuid": "349491f1-ccc4-466a-950a-ce9baefb6eb3",
+  "name": {
+    "en": "Fio Statement Mailer",
+    "cs": "Odesílač Fio výpisů"
+  },
+  "description": {
+    "en": "Send FioBank statements to mail recipient",
+    "cs": "Odeslat FioBank výpisy na e-mail příjemce"
+  },
+  "tags": [
+    "FioBank",
+    "Statements",
+    "Downloader"
+  ],
+  "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
+  "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
+  "executable": "fiobank-statement-mailer",
+  "environment": {
+    "FIO_TOKEN": {
+      "type": "password",
+      "description": {
+        "en": "Token with account read permission",
+        "cs": "Token s oprávněním pro čtení účtu"
+      },
+      "defval": "",
+      "required": true,
+      "category": "Security"
     },
-    "description": {
-        "en": "Send FioBank statements to mail recipient",
-        "cs": "Odeslat FioBank statements to e-mail recipient"
+    "FIO_TOKEN_NAME": {
+      "type": "string",
+      "description": {
+        "en": "Name of Token used",
+        "cs": "Název použitého tokenu"
+      },
+      "defval": "",
+      "required": true,
+      "category": "Security"
     },
-    "tags": [
-        "FioBank",
-        "Statements",
-        "Downloader"
-    ],
-    "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
-    "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
-    "executable": "fiobank-statement-mailer",
-    "environment": {
-        "FIO_TOKEN": {
-            "type": "password",
-            "description": {
-                "en": "Token with account read permission",
-                "cs": "Token with account read permission"
-            },
-            "defval": "",
-            "required": true,
-            "category": "Security"
-        },
-        "FIO_TOKEN_NAME": {
-            "type": "string",
-            "description": {
-                "en": "Name of Token used",
-                "cs": "Name of Token used"
-            },
-            "defval": "",
-            "required": true,
-            "category": "Security"
-        },
-        "ACCOUNT_NUMBER": {
-            "type": "string",
-            "description": {
-                "en": "Number of Account",
-                "cs": "Number of Account"
-            },
-            "defval": "",
-            "required": true,
-            "category": "Other"
-        },
-        "STATEMENTS_FORMAT": {
-            "type": "string",
-            "description": {
-                "en": "(default) pdf, csv, gpc, html, json, ofx, xml",
-                "cs": "(default) pdf, csv, gpc, html, json, ofx, xml"
-            },
-            "defval": "pdf",
-            "options": [
-                "pdf",
-                "csv",
-                "gpc",
-                "html",
-                "json",
-                "ofx",
-                "xml"
-            ],
-            "required": true,
-            "category": "Other"
-        },
-        "STATEMENTS_DIR": {
-            "type": "file-path",
-            "description": {
-                "en": "Temporary folder for statements downloaded",
-                "cs": "Temporary folder for statements downloaded"
-            },
-            "defval": "/tmp/",
-            "required": false,
-            "category": "Other"
-        },
-        "STATEMENTS_TO": {
-            "type": "email",
-            "description": {
-                "en": "Recipient's email address",
-                "cs": "Recipient's email address"
-            },
-            "defval": "",
-            "required": true,
-            "category": "Other"
-        },
-        "STATEMENTS_FROM": {
-            "type": "email",
-            "description": {
-                "en": "Sender's email address",
-                "cs": "Odeslater's ee-mail address"
-            },
-            "defval": "",
-            "required": false,
-            "category": "Other"
-        },
-        "STATEMENTS_REPLYTO": {
-            "type": "email",
-            "description": {
-                "en": "Reply-To email address",
-                "cs": "Reply-To email address"
-            },
-            "defval": "",
-            "required": false,
-            "category": "Other"
-        },
-        "EASE_LOGGER": {
-            "type": "string",
-            "description": {
-                "en": "write log messages using",
-                "cs": "write log messages using"
-            },
-            "defval": "console|syslog",
-            "required": false,
-            "category": "Behavior"
-        },
-        "LANG": {
-            "type": "set",
-            "description": {
-                "en": "Locale for this application",
-                "cs": "Locale for this application"
-            },
-            "defval": "cs_CZ",
-            "required": false,
-            "options": [
-                "cs_CZ",
-                "en_US"
-            ],
-            "category": "Other"
-        }
+    "ACCOUNT_NUMBER": {
+      "type": "string",
+      "description": {
+        "en": "Number of Account",
+        "cs": "Číslo účtu"
+      },
+      "defval": "",
+      "required": true,
+      "category": "Other"
     },
-    "exitCodes": {
-        "0": {
-            "description": {
-                "en": "Success",
-                "cs": "Úspěch"
-            },
-            "severity": "success",
-            "retry": false
-        },
-        "1": {
-            "description": {
-                "en": "General error",
-                "cs": "Obecná chyba"
-            },
-            "severity": "error",
-            "retry": true
-        },
-        "404": {
-            "description": {
-                "en": "Not found - resource does not exist",
-                "cs": "Nenalezeno - zdroj neexistuje"
-            },
-            "severity": "error",
-            "retry": true
-        },
-        "409": {
-            "description": {
-                "en": "Application-specific error code 409",
-                "cs": "Aplikační chybový kód 409"
-            },
-            "severity": "error",
-            "retry": true
-        },
-        "500": {
-            "description": {
-                "en": "Internal server error",
-                "cs": "Interní chyba serveru"
-            },
-            "severity": "critical",
-            "retry": true
-        }
+    "STATEMENTS_FORMAT": {
+      "type": "string",
+      "description": {
+        "en": "(default) pdf, csv, gpc, html, json, ofx, xml",
+        "cs": "(výchozí) pdf, csv, gpc, html, json, ofx, xml"
+      },
+      "defval": "pdf",
+      "options": [
+        "pdf",
+        "csv",
+        "gpc",
+        "html",
+        "json",
+        "ofx",
+        "xml"
+      ],
+      "required": true,
+      "category": "Other"
+    },
+    "STATEMENTS_DIR": {
+      "type": "file-path",
+      "description": {
+        "en": "Temporary folder for statements downloaded",
+        "cs": "Dočasná složka pro stažené výpisy"
+      },
+      "defval": "/tmp/",
+      "required": false,
+      "category": "Other"
+    },
+    "STATEMENTS_TO": {
+      "type": "email",
+      "description": {
+        "en": "Recipient's email address",
+        "cs": "E-mailová adresa příjemce"
+      },
+      "defval": "",
+      "required": true,
+      "category": "Other"
+    },
+    "STATEMENTS_FROM": {
+      "type": "email",
+      "description": {
+        "en": "Sender's email address",
+        "cs": "E-mailová adresa odesílatele"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Other"
+    },
+    "STATEMENTS_REPLYTO": {
+      "type": "email",
+      "description": {
+        "en": "Reply-To email address",
+        "cs": "E-mailová adresa pro odpověď"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Other"
+    },
+    "EASE_LOGGER": {
+      "type": "string",
+      "description": {
+        "en": "write log messages using",
+        "cs": "zapisovat log zprávy pomocí"
+      },
+      "defval": "console|syslog",
+      "required": false,
+      "category": "Behavior"
+    },
+    "LANG": {
+      "type": "set",
+      "description": {
+        "en": "Locale for this application",
+        "cs": "Lokalizace pro tuto aplikaci"
+      },
+      "defval": "cs_CZ",
+      "required": false,
+      "options": [
+        "cs_CZ",
+        "en_US"
+      ],
+      "category": "Other"
     }
+  },
+  "exitCodes": {
+    "0": {
+      "description": {
+        "en": "Success",
+        "cs": "Úspěch"
+      },
+      "severity": "success",
+      "retry": false
+    },
+    "1": {
+      "description": {
+        "en": "General error",
+        "cs": "Obecná chyba"
+      },
+      "severity": "error",
+      "retry": true
+    },
+    "404": {
+      "description": {
+        "en": "Not found - resource does not exist",
+        "cs": "Nenalezeno - zdroj neexistuje"
+      },
+      "severity": "error",
+      "retry": true
+    },
+    "409": {
+      "description": {
+        "en": "Application-specific error code 409",
+        "cs": "Aplikační chybový kód 409"
+      },
+      "severity": "error",
+      "retry": true
+    },
+    "500": {
+      "description": {
+        "en": "Internal server error",
+        "cs": "Interní chyba serveru"
+      },
+      "severity": "critical",
+      "retry": true
+    }
+  }
 }
