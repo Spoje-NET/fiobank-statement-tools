@@ -1850,22 +1850,22 @@
         },
         {
             "name": "ergebnis/php-cs-fixer-config",
-            "version": "6.58.0",
+            "version": "6.58.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/php-cs-fixer-config.git",
-                "reference": "5100baf7dcbe76c642de82dfd5f61f8799b7fb7e"
+                "reference": "0289893407f404e36839deb3fa3d06c3cb0ca9d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/php-cs-fixer-config/zipball/5100baf7dcbe76c642de82dfd5f61f8799b7fb7e",
-                "reference": "5100baf7dcbe76c642de82dfd5f61f8799b7fb7e",
+                "url": "https://api.github.com/repos/ergebnis/php-cs-fixer-config/zipball/0289893407f404e36839deb3fa3d06c3cb0ca9d5",
+                "reference": "0289893407f404e36839deb3fa3d06c3cb0ca9d5",
                 "shasum": ""
             },
             "require": {
                 "erickskrauch/php-cs-fixer-custom-fixers": "~1.3.1",
                 "ext-filter": "*",
-                "friendsofphp/php-cs-fixer": "~3.92.0",
+                "friendsofphp/php-cs-fixer": "~3.92.3",
                 "kubawerlos/php-cs-fixer-custom-fixers": "~3.35.1",
                 "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
             },
@@ -1875,15 +1875,15 @@
                 "ergebnis/license": "^2.7.0",
                 "ergebnis/phpstan-rules": "^2.12.0",
                 "ergebnis/phpunit-slow-test-detector": "^2.20.0",
-                "ergebnis/rector-rules": "^1.8.0",
+                "ergebnis/rector-rules": "^1.9.0",
                 "fakerphp/faker": "^1.24.1",
                 "phpstan/extension-installer": "^1.4.3",
                 "phpstan/phpstan": "^2.1.31",
                 "phpstan/phpstan-deprecation-rules": "^2.0.3",
-                "phpstan/phpstan-phpunit": "^2.0.10",
+                "phpstan/phpstan-phpunit": "^2.0.11",
                 "phpstan/phpstan-strict-rules": "^2.0.7",
                 "phpunit/phpunit": "^9.6.22",
-                "rector/rector": "^2.2.11",
+                "rector/rector": "^2.3.0",
                 "symfony/filesystem": "^5.0.0 || ^6.0.0",
                 "symfony/process": "^5.0.0 || ^6.0.0"
             },
@@ -1917,7 +1917,7 @@
                 "security": "https://github.com/ergebnis/php-cs-fixer-config/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/php-cs-fixer-config"
             },
-            "time": "2025-12-13T14:48:11+00:00"
+            "time": "2025-12-29T15:38:40+00:00"
         },
         {
             "name": "erickskrauch/php-cs-fixer-custom-fixers",
@@ -2096,16 +2096,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.92.3",
+            "version": "v3.92.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "2ba8f5a60f6f42fb65758cfb3768434fa2d1c7e8"
+                "reference": "9e7488b19403423e02e8403cc1eb596baf4673b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/2ba8f5a60f6f42fb65758cfb3768434fa2d1c7e8",
-                "reference": "2ba8f5a60f6f42fb65758cfb3768434fa2d1c7e8",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/9e7488b19403423e02e8403cc1eb596baf4673b0",
+                "reference": "9e7488b19403423e02e8403cc1eb596baf4673b0",
                 "shasum": ""
             },
             "require": {
@@ -2137,17 +2137,17 @@
             },
             "require-dev": {
                 "facile-it/paraunit": "^1.3.1 || ^2.7",
-                "infection/infection": "^0.31.0",
-                "justinrainbow/json-schema": "^6.5",
-                "keradus/cli-executor": "^2.2",
+                "infection/infection": "^0.31",
+                "justinrainbow/json-schema": "^6.6",
+                "keradus/cli-executor": "^2.3",
                 "mikey179/vfsstream": "^1.6.12",
                 "php-coveralls/php-coveralls": "^2.9",
                 "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.6",
                 "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.6",
-                "phpunit/phpunit": "^9.6.25 || ^10.5.53 || ^11.5.34",
+                "phpunit/phpunit": "^9.6.31 || ^10.5.60 || ^11.5.46",
                 "symfony/polyfill-php85": "^1.33",
-                "symfony/var-dumper": "^5.4.48 || ^6.4.24 || ^7.3.2 || ^8.0",
-                "symfony/yaml": "^5.4.45 || ^6.4.24 || ^7.3.2 || ^8.0"
+                "symfony/var-dumper": "^5.4.48 || ^6.4.26 || ^7.4.0 || ^8.0",
+                "symfony/yaml": "^5.4.45 || ^6.4.30 || ^7.4.1 || ^8.0"
             },
             "suggest": {
                 "ext-dom": "For handling output formats in XML",
@@ -2188,7 +2188,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.92.3"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.92.4"
             },
             "funding": [
                 {
@@ -2196,7 +2196,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-18T10:45:02+00:00"
+            "time": "2026-01-04T00:38:52+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -3476,12 +3476,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/child-process.git",
-                "reference": "1721e2b93d89b745664353b9cfc8f155ba8a6159"
+                "reference": "970f0e71945556422ee4570ccbabaedc3cf04ad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/child-process/zipball/1721e2b93d89b745664353b9cfc8f155ba8a6159",
-                "reference": "1721e2b93d89b745664353b9cfc8f155ba8a6159",
+                "url": "https://api.github.com/repos/reactphp/child-process/zipball/970f0e71945556422ee4570ccbabaedc3cf04ad3",
+                "reference": "970f0e71945556422ee4570ccbabaedc3cf04ad3",
                 "shasum": ""
             },
             "require": {
@@ -3535,7 +3535,7 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/child-process/issues",
-                "source": "https://github.com/reactphp/child-process/tree/v0.6.6"
+                "source": "https://github.com/reactphp/child-process/tree/v0.6.7"
             },
             "funding": [
                 {
@@ -3543,7 +3543,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-01-01T16:37:48+00:00"
+            "time": "2025-12-23T15:25:20+00:00"
         },
         {
             "name": "react/dns",
@@ -4161,16 +4161,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "dev-main",
+            "version": "7.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "9aff9b4e75e81bbfe6c769be3f393055febf1c6a"
+                "reference": "973d592efe76a26d3989010c8c06b952cf4edd93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/9aff9b4e75e81bbfe6c769be3f393055febf1c6a",
-                "reference": "9aff9b4e75e81bbfe6c769be3f393055febf1c6a",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/973d592efe76a26d3989010c8c06b952cf4edd93",
+                "reference": "973d592efe76a26d3989010c8c06b952cf4edd93",
                 "shasum": ""
             },
             "require": {
@@ -4180,7 +4180,6 @@
                 "phpunit/phpunit": "^12.0",
                 "symfony/process": "^7.2"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -4217,7 +4216,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/diff/issues",
                 "security": "https://github.com/sebastianbergmann/diff/security/policy",
-                "source": "https://github.com/sebastianbergmann/diff/tree/main"
+                "source": "https://github.com/sebastianbergmann/diff/tree/7.0"
             },
             "funding": [
                 {
@@ -4237,7 +4236,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-26T09:46:36+00:00"
+            "time": "2025-12-31T13:52:56+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -4965,12 +4964,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "ac5ae7735db11b7959f678f9437b88108e2abe4a"
+                "reference": "ccae82871faae9494fc568a0bb8aa0c3ce1cd76c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/ac5ae7735db11b7959f678f9437b88108e2abe4a",
-                "reference": "ac5ae7735db11b7959f678f9437b88108e2abe4a",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ccae82871faae9494fc568a0bb8aa0c3ce1cd76c",
+                "reference": "ccae82871faae9494fc568a0bb8aa0c3ce1cd76c",
                 "shasum": ""
             },
             "require": {
@@ -5047,7 +5046,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-17T20:42:10+00:00"
+            "time": "2025-12-25T03:44:57+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -5291,12 +5290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "efebf02e962cf39d2033e34933a7615a15732251"
+                "reference": "f5ac546dfdae09892fb317365605f8fe77fd509f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/efebf02e962cf39d2033e34933a7615a15732251",
-                "reference": "efebf02e962cf39d2033e34933a7615a15732251",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/f5ac546dfdae09892fb317365605f8fe77fd509f",
+                "reference": "f5ac546dfdae09892fb317365605f8fe77fd509f",
                 "shasum": ""
             },
             "require": {
@@ -5351,7 +5350,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-19T08:33:17+00:00"
+            "time": "2025-12-23T14:52:15+00:00"
         },
         {
             "name": "symfony/options-resolver",
@@ -6016,12 +6015,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "17ad3352987db1c0d23092b852b17182081710b1"
+                "reference": "74244a484499ab192f732ed2f71cd055f8ebe9bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/17ad3352987db1c0d23092b852b17182081710b1",
-                "reference": "17ad3352987db1c0d23092b852b17182081710b1",
+                "url": "https://api.github.com/repos/symfony/process/zipball/74244a484499ab192f732ed2f71cd055f8ebe9bf",
+                "reference": "74244a484499ab192f732ed2f71cd055f8ebe9bf",
                 "shasum": ""
             },
             "require": {
@@ -6073,7 +6072,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-19T10:01:25+00:00"
+            "time": "2025-12-31T16:47:11+00:00"
         },
         {
             "name": "symfony/service-contracts",
