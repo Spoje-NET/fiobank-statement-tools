@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.spoje_net.fiobank_statement_tools</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>fiobank-statement-tools</name>
+  <summary>Download your FioBank Statements</summary>
+  <description>
+    <p>
+      Download statements to disk in requested format and within given time Allow use of FioBank statement tools in MultiFlexi environment
+    </p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://github.com/Spoje-NET/fiobank-statement-tools</url>
+  <url type="bugtracker">https://github.com/Spoje-NET/fiobank-statement-tools/issues</url>
+  <developer id="io.github.spoje_net">
+    <name>Spoje.Net</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+</component>
