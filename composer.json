@@ -17,7 +17,7 @@
     "bin": ["src/fiobank-statement-downloader.php"],
     "require": {
         "mhujer/fio-api-php": "dev-master",
-        "vitexsoftware/ease-core": "^1.49"
+        "vitexsoftware/ease-core": "^1.50"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
