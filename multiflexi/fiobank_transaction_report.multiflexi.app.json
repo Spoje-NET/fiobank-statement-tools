@@ -1,23 +1,18 @@
 {
-  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-  "schemaVersion": "3.2.1",
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
+  "schemaVersion": "3.2.",
   "version": "1.0.1",
   "uuid": "3d987aa7-906c-4a23-894e-bf160c2780f0",
   "name": {
     "en": "Fio transaction report",
-    "cs": "Fio transaction report"
+    "cs": "Report transakcí FioBank"
   },
   "description": {
     "en": "FioBank transaction report",
     "cs": "FioBank transakce report"
   },
-  "tags": [
-    "FioBank",
-    "Transactions",
-    "Json",
-    "Report",
-    "Check"
-  ],
+  "requirements": ["FioBank"],
+  "tags": ["FioBank", "Transactions", "Json", "Report", "Check"],
   "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
   "executable": "fiobank-transaction-report",
   "environment": {
@@ -89,10 +84,7 @@
       },
       "defval": "cs_CZ",
       "required": false,
-      "options": [
-        "cs_CZ",
-        "en_US"
-      ],
+      "options": ["cs_CZ", "en_US"],
       "category": "Other"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
   "schemaVersion": "3.2.1",
   "version": "1.0.1",
   "uuid": "349491f1-ccc4-466a-950a-ce9baefb6eb3",
@@ -11,6 +11,7 @@
     "en": "Send FioBank statements to mail recipient",
     "cs": "Odeslat FioBank výpisy na e-mail příjemce"
   },
+"requirements": ["FioBank"],
   "tags": [
     "FioBank",
     "Statements",
