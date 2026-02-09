@@ -17,6 +17,6 @@ Description: Download your FioBank Statements
 Package: multiflexi-fiobank-statement-tools
 Architecture: all
 Replaces: multiflexi-fiobank-statement-downloader
-Depends: fiobank-statement-tools, multiflexi
-Description: Fio Bank statement downoloade, mailer and reporter
+Depends: fiobank-statement-tools, multiflexi-cli
+Description: Fio Bank statement downloader, mailer and reporter
  Allow use of FioBank statement tools in MultiFlexi environment

@@ -11,12 +11,8 @@
     "en": "Send FioBank statements to mail recipient",
     "cs": "Odeslat FioBank výpisy na e-mail příjemce"
   },
-"requirements": ["FioBank"],
-  "tags": [
-    "FioBank",
-    "Statements",
-    "Downloader"
-  ],
+  "requirements": ["FioBank"],
+  "tags": ["FioBank", "Statements", "Downloader"],
   "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
   "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
   "executable": "fiobank-statement-mailer",
@@ -58,15 +54,7 @@
         "cs": "(výchozí) pdf, csv, gpc, html, json, ofx, xml"
       },
       "defval": "pdf",
-      "options": [
-        "pdf",
-        "csv",
-        "gpc",
-        "html",
-        "json",
-        "ofx",
-        "xml"
-      ],
+      "options": ["pdf", "csv", "gpc", "html", "json", "ofx", "xml"],
       "required": true,
       "category": "Other"
     },
@@ -128,10 +116,7 @@
       },
       "defval": "cs_CZ",
       "required": false,
-      "options": [
-        "cs_CZ",
-        "en_US"
-      ],
+      "options": ["cs_CZ", "en_US"],
       "category": "Other"
     }
   },
@@ -175,6 +160,20 @@
       },
       "severity": "critical",
       "retry": true
+    }
+  },
+  "returnCodes": {
+    "0": {
+      "description": {
+        "en": "Success",
+        "cs": "Úspěch"
+      }
+    },
+    "1": {
+      "description": {
+        "en": "General error",
+        "cs": "Obecná chyba"
+      }
     }
   }
 }

@@ -66,10 +66,9 @@ distributions.each { distro ->
                         sh 'sudo apt-get update --allow-releaseinfo-change'
                         sh 'echo "INSTALATION"'
                       
-// Ensure abraflexi-webhook-acceptor-sqlite is first in the list
-                    def installOrder = [
-                        'abraflexi-webhook-acceptor-sqlite',
-                    ]
+                        def installOrder = [
+//                        '',
+                        ]
 
                     def sorted_artifacts = artifacts.toList()
                     installOrder.each { pkgPrefix ->
