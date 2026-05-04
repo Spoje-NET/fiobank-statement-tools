@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 require_once '/usr/share/php/Composer/InstalledVersions.php';
+require_once '/usr/share/php/Composer/CaBundle/autoload.php';
 require_once '/usr/share/php/Ease/autoload.php';
 require_once '/usr/share/php/GuzzleHttp/autoload.php';
 require_once '/usr/share/php/GuzzleHttp/Psr7/autoload.php';
