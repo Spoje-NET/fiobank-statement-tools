@@ -1,9 +1,6 @@
 #!/usr/bin/make -f
-# You must remove unused comment lines for the released package.
-#export DH_VERBOSE = 1
-#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+PKG_VERSION := $(shell dpkg-parsechangelog -S Version | sed 's/~.*//')
+PKG_SOURCE  := $(shell jq -r '.name' composer.json)
 
 %:
 	dh $@
@@ -14,10 +11,21 @@ override_dh_clean:
 
 override_dh_install:
 	dh_install
-	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/fiobank-statement-tools/g'   debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/*.php
-	sed -i -e 's/\.\.\/.env//g'  debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/*.php
-	sed -i -e 's/\.\.\/i18n/\/usr\/share\/locale/g'            	     debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/*.php
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/conf/composer.json |sponge debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/composer.json
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/fiobank_transaction_report.multiflexi.app.json |sponge debian/multiflexi-fiobank-statement-tools/usr/lib/fiobank-statement-tools/multiflexi/fiobank_transaction_report.multiflexi.app.json
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/fiobank_statement_downloader.multiflexi.app.json |sponge debian/multiflexi-fiobank-statement-tools/usr/lib/fiobank-statement-tools/multiflexi/fiobank_statement_downloader.multiflexi.app.json
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/fiobank_statement_mailer.multiflexi.app.json |sponge debian/multiflexi-fiobank-statement-tools/usr/lib/fiobank-statement-tools/multiflexi/fiobank_statement_mailer.multiflexi.app.json
+	install -m 644 debian/autoload.php \
+	    debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/autoload.php
+	sed -i "s|require_once '../vendor/autoload.php'|require_once '/usr/lib/fiobank-statement-tools/autoload.php'|" \
+	    debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/*.php
+	sed -i -e 's/\.\.\/.env//g' \
+	    debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/*.php
+	sed -i -e 's|\.\.\/i18n|/usr/share/locale|g' \
+	    debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/*.php
+	sed -i "s|'unknown'|'$(PKG_SOURCE)'|" \
+	    debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/autoload.php
+	sed -i "s|'0.0.0'|'$(PKG_VERSION)'|" \
+	    debian/fiobank-statement-tools/usr/lib/fiobank-statement-tools/autoload.php
+	jq '.version = "$(PKG_VERSION)"' multiflexi/fiobank_transaction_report.multiflexi.app.json \
+	    |sponge debian/multiflexi-fiobank-statement-tools/usr/lib/fiobank-statement-tools/multiflexi/fiobank_transaction_report.multiflexi.app.json
+	jq '.version = "$(PKG_VERSION)"' multiflexi/fiobank_statement_downloader.multiflexi.app.json \
+	    |sponge debian/multiflexi-fiobank-statement-tools/usr/lib/fiobank-statement-tools/multiflexi/fiobank_statement_downloader.multiflexi.app.json
+	jq '.version = "$(PKG_VERSION)"' multiflexi/fiobank_statement_mailer.multiflexi.app.json \
+	    |sponge debian/multiflexi-fiobank-statement-tools/usr/lib/fiobank-statement-tools/multiflexi/fiobank_statement_mailer.multiflexi.app.json

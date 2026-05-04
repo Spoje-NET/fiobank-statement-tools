@@ -1,4 +1,3 @@
-debian/conf/composer.json       usr/lib/fiobank-statement-tools/
 src/*			                usr/lib/fiobank-statement-tools/
 src/SpojeNet/FioApi/*           usr/lib/fiobank-statement-tools/SpojeNet/FioApi/
 bin/*                           usr/bin/
