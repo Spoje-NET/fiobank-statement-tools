@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>io.github.spoje_net.fiobank_statement_tools</id>
+  <icon type="stock">fiobank-statement-tools</icon>
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
   <name>fiobank-statement-tools</name>
