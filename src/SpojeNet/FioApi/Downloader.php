@@ -29,6 +29,29 @@ class Downloader extends \FioApi\Downloader
     protected \DateTime $until;
 
     /**
+     * Constructor with built-in rate limiting.
+     *
+     * Automatically sets up a shared JsonRateLimitStore so concurrent
+     * processes (e.g. multiple MultiFlexi jobs) coordinate FIO API calls
+     * and never hit the 30-second per-token limit.
+     *
+     * @param string                       $token
+     * @param \GuzzleHttp\ClientInterface|null $client
+     * @param \FioApi\RateLimit\RateLimiter|null $rateLimiter
+     */
+    public function __construct(
+        string $token,
+        ?\GuzzleHttp\ClientInterface $client = null,
+        ?\FioApi\RateLimit\RateLimiter $rateLimiter = null
+    ) {
+        if ($rateLimiter === null) {
+            $store = new \FioApi\RateLimit\JsonRateLimitStore('/tmp/fio-ratelimit.json');
+            $rateLimiter = new \FioApi\RateLimit\RateLimiter($store, true);
+        }
+        parent::__construct($token, $client, $rateLimiter);
+    }
+
+    /**
      * Prepare processing interval.
      *
      * @param string $scope
