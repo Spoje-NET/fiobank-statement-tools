@@ -29,3 +29,4 @@
 /debian/fiobank-statement-downloader.substvars
 /debian/multiflexi-fiobank-statement-downloader.debhelper.log
 /debian/multiflexi-fiobank-statement-downloader.substvars
+/.phpunit.result.cache
