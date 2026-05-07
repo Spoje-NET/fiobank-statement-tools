@@ -180,11 +180,35 @@ fiobank-transaction-report [path/to/.env]
 }
 ```
 
+## Rate Limiting
+
+The Fio API enforces a 30-second cooldown between requests using the same token (HTTP 409 on violation).
+
+The `SpojeNet\FioApi\Downloader` automatically configures a shared rate limiter (`/tmp/fio-ratelimit.json`) so concurrent processes (e.g. multiple MultiFlexi jobs) coordinate API calls without hitting the limit.
+
+No manual setup is needed — just use the downloader as usual:
+
+```php
+$downloader = new \SpojeNet\FioApi\Downloader($token);
+$transactions = $downloader->downloadSince(new \DateTimeImmutable('-1 day'));
+```
+
+You can also provide a custom rate limiter if needed:
+
+```php
+$store = new \FioApi\RateLimit\JsonRateLimitStore('/path/to/store.json');
+$limiter = new \FioApi\RateLimit\RateLimiter($store, true); // true = wait mode
+$downloader = new \SpojeNet\FioApi\Downloader($token, null, $limiter);
+```
+
+See [php-mhujer-fio-api Rate Limiting](https://github.com/Spoje-NET/php-mhujer-fio-api#rate-limiting) for details on wait/throw modes and custom store backends.
+
 ## Features
 
 - **Multiple Statement Formats**: Support for PDF, CSV, GPC, HTML, JSON, OFX, and XML formats
 - **Automated Email Delivery**: Send statements directly to recipients via email
 - **Transaction Analysis**: Generate detailed JSON reports of account activity
+- **Built-in Rate Limiting**: Automatic 30-second cooldown coordination across processes
 - **Flexible Scheduling**: Import data for specific date ranges or predefined periods
 - **MultiFlexi Integration**: Ready for deployment in MultiFlexi application platform
 - **Comprehensive Logging**: Built-in logging with multiple output options
@@ -196,9 +220,23 @@ fiobank-transaction-report [path/to/.env]
 - FioBank API token with read permissions
 - Valid FioBank account
 
+## Testing
+
+Run all tests:
+
+```shell
+composer test
+```
+
+Run only integration tests (requires `.env` with `FIO_TOKEN`):
+
+```shell
+vendor/bin/phpunit --testsuite Integration
+```
+
 ## Library Dependencies
 
-Created using the library [fio-api-php](https://github.com/mhujer/fio-api-php)
+Created using the library [fio-api-php](https://github.com/Spoje-NET/php-mhujer-fio-api) (Spoje-NET fork with rate limiting support)
 
 ## MultiFlexi Integration
 

@@ -1,5 +1,14 @@
 {
     "name": "spojenet/fiobank-statement-tools",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../php-mhujer-fio-api",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "type": "project",
     "description": "FioBank bank statement tools",
     "license": "MIT",
@@ -17,7 +26,7 @@
     "minimum-stability": "dev",
     "bin": ["src/fiobank-statement-downloader.php"],
     "require": {
-        "mhujer/fio-api-php": "dev-master",
+        "mhujer/fio-api-php": "dev-main",
         "vitexsoftware/ease-core": "^1.50"
     },
     "require-dev": {
