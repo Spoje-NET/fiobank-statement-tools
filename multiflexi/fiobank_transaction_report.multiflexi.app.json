@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
-  "schemaVersion": "3.2.",
+  "schemaVersion": "3.4.0",
   "version": "1.0.1",
   "uuid": "3d987aa7-906c-4a23-894e-bf160c2780f0",
   "name": {
@@ -11,10 +11,31 @@
     "en": "FioBank transaction report",
     "cs": "FioBank transakce report"
   },
-  "requirements": ["FioBank"],
-  "tags": ["FioBank", "Transactions", "Json", "Report", "Check"],
+  "requirements": [
+    "FioBank"
+  ],
+  "tags": [
+    "FioBank",
+    "Transactions",
+    "Json",
+    "Report",
+    "Check"
+  ],
   "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
   "executable": "fiobank-transaction-report",
+  "events": {
+    "consumes": {
+      "bank.statement.downloaded": {
+        "description": "A bank statement file was downloaded",
+        "format": "file"
+      }
+    },
+    "emits": {
+      "bank.transaction.reported": {
+        "description": "A bank transaction report was produced"
+      }
+    }
+  },
   "environment": {
     "FIO_TOKEN": {
       "type": "password",
@@ -84,7 +105,10 @@
       },
       "defval": "cs_CZ",
       "required": false,
-      "options": ["cs_CZ", "en_US"],
+      "options": [
+        "cs_CZ",
+        "en_US"
+      ],
       "category": "Other"
     }
   },

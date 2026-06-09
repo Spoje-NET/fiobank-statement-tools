@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
-  "schemaVersion": "3.2.1",
+  "schemaVersion": "3.4.0",
   "version": "1.0.1",
   "uuid": "51b42eb3-ef0a-48b2-81ba-17c270229594",
   "name": {
@@ -11,11 +11,24 @@
     "en": "Download FioBank statements to disk",
     "cs": "Stáhnout FioBank výpisy na disk"
   },
-  "requirements": ["FioBank"],
-  "tags": ["FioBank", "Statements", "Downloader"],
+  "requirements": [
+    "FioBank"
+  ],
+  "tags": [
+    "FioBank",
+    "Statements",
+    "Downloader"
+  ],
   "homepage": "https://github.com/Spoje-NET/fiobank-statement-tools",
   "ociimage": "dockerhub.io/spojenet/fiobank-statement-downloader",
   "executable": "fiobank-statement-downloader",
+  "events": {
+    "emits": {
+      "bank.statement.downloaded": {
+        "description": "A bank statement file was downloaded"
+      }
+    }
+  },
   "environment": {
     "FIO_TOKEN": {
       "type": "password",
@@ -64,7 +77,15 @@
         "cs": "(výchozí) pdf, csv, gpc, html, json, ofx, xml"
       },
       "defval": "pdf",
-      "options": ["pdf", "csv", "gpc", "html", "json", "ofx", "xml"],
+      "options": [
+        "pdf",
+        "csv",
+        "gpc",
+        "html",
+        "json",
+        "ofx",
+        "xml"
+      ],
       "required": true,
       "category": "Other"
     },
@@ -86,7 +107,10 @@
       },
       "defval": "cs_CZ",
       "required": false,
-      "options": ["cs_CZ", "en_US"],
+      "options": [
+        "cs_CZ",
+        "en_US"
+      ],
       "category": "Other"
     }
   },
