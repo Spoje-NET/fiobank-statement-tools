@@ -1,3 +1,12 @@
+fiobank-statement-tools (1.0.2) UNRELEASED; urgency=medium
+
+  * Exit codes now fit 0-255 (3 rate limit, 4 not found, 5 statement not
+    available yet / invalid token) instead of raw HTTP status (500 -> 244)
+  * Mailer reports mail sending failures with non-zero exit code
+  * MultiFlexi definitions: exitCodes updated
+
+ -- Vitex <vitezslav.dvorak@spojenet.cz>  Thu, 01 Oct 2026 19:03:48 +0200
+
 fiobank-statement-tools (1.0.1) UNRELEASED; urgency=medium
 
   * MultiFlexi definition update

@@ -1475,3 +1475,6 @@ msgstr "Neošetřená operace"
 #, fuzzy
 #~ msgid "Transakce"
 #~ msgstr "Transakce"
+
+msgid "Statement not available yet (not generated) or invalid token"
+msgstr "Výpis zatím není k dispozici (nebyl vygenerován) nebo je neplatný token"

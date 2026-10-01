@@ -55,7 +55,7 @@ $payments = [
 try {
     $transactionList = $downloader->downloadFromTo($downloader->getSince(), $downloader->getUntil());
 } catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    $exitCode = $e->getCode();
+    $exitCode = \SpojeNet\FioApi\Downloader::exitCodeForHttpStatus($e->getCode());
 
     switch ($e->getCode()) {
         case 409:

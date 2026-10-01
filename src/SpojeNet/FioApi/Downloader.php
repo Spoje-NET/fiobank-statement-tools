@@ -143,6 +143,28 @@ class Downloader extends \FioApi\Downloader
         }
     }
 
+    /**
+     * Map FIO API HTTP status to process exit code (must fit into 0-255).
+     *
+     * @param int $status HTTP status code
+     *
+     * @return int 3 = rate limit, 4 = not found, 5 = statement not available / invalid token, 1 = other
+     */
+    public static function exitCodeForHttpStatus(int $status): int
+    {
+        switch ($status) {
+            case 409:
+                return 3;
+            case 404:
+                return 4;
+            case 500:
+                return 5;
+
+            default:
+                return 1;
+        }
+    }
+
     public function getUntil(): \DateTime
     {
         return $this->until;

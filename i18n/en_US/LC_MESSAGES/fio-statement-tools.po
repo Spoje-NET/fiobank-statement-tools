@@ -153,3 +153,6 @@ msgstr "Unhandled Operation"
 #, php-format
 #~ msgid "Are you sure you wish to delete %%d row of %s ?"
 #~ msgstr "Are you sure you wish to delete %%d row of %s ?"
+
+msgid "Statement not available yet (not generated) or invalid token"
+msgstr "Statement not available yet (not generated) or invalid token"

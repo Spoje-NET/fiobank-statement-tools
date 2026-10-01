@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
   "schemaVersion": "3.4.0",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "uuid": "349491f1-ccc4-466a-950a-ce9baefb6eb3",
   "name": {
     "en": "Fio Statement Mailer",
@@ -167,7 +167,15 @@
       "severity": "error",
       "retry": true
     },
-    "404": {
+    "3": {
+      "description": {
+        "en": "Rate limit - one API call per token every 30 seconds",
+        "cs": "Limit API - jedno volání na token každých 30 sekund"
+      },
+      "severity": "warning",
+      "retry": true
+    },
+    "4": {
       "description": {
         "en": "Not found - resource does not exist",
         "cs": "Nenalezeno - zdroj neexistuje"
@@ -175,35 +183,13 @@
       "severity": "error",
       "retry": true
     },
-    "409": {
+    "5": {
       "description": {
-        "en": "Application-specific error code 409",
-        "cs": "Aplikační chybový kód 409"
+        "en": "Statement not yet available (not generated) or invalid token",
+        "cs": "Výpis zatím není k dispozici (nebyl vygenerován) nebo neplatný token"
       },
-      "severity": "error",
+      "severity": "warning",
       "retry": true
-    },
-    "500": {
-      "description": {
-        "en": "Internal server error",
-        "cs": "Interní chyba serveru"
-      },
-      "severity": "critical",
-      "retry": true
-    }
-  },
-  "returnCodes": {
-    "0": {
-      "description": {
-        "en": "Success",
-        "cs": "Úspěch"
-      }
-    },
-    "1": {
-      "description": {
-        "en": "General error",
-        "cs": "Obecná chyba"
-      }
     }
   }
 }

@@ -121,12 +121,16 @@ try {
                 }
             }
 
-            $mailer->send();
+            if ($mailer->send() === false) {
+                $exitCode = 1;
+            }
         } catch (Exception $exc) {
+            $downloader->addStatusMessage($exc->getMessage(), 'error');
+            $exitCode = 1;
         }
     }
 } catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    $exitCode = $e->getCode();
+    $exitCode = \SpojeNet\FioApi\Downloader::exitCodeForHttpStatus($e->getCode());
 
     switch ($e->getCode()) {
         case 409:
@@ -134,7 +138,7 @@ try {
 
             break;
         case 500:
-            $downloader->addStatusMessage($e->getCode().': '._('Server returned 500 Internal Error (probably invalid token?)'), 'error');
+            $downloader->addStatusMessage($e->getCode().': '._('Statement not available yet (not generated) or invalid token'), 'error');
 
             break;
         case 404:
